@@ -9,55 +9,19 @@
     "mount": "Shadow Network (kubernetes MCP)"
   },
   "mcpServers": {
-    "filesystem": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/"],
-      "purpose": "Full filesystem access - the rogue sees all",
-      "abilities_enabled": [
-        "read_file - Read any file",
-        "write_file - Modify anything",
-        "list_directory - Survey the system",
-        "search_files - Find hidden treasures"
-      ],
-      "warning": "Root access is a double-edged dagger"
-    },
-    "shell": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-shell"],
-      "purpose": "Direct command execution - the rogue's primary weapon",
-      "abilities_enabled": [
-        "execute_command - Strike from the shadows",
-        "pipe_commands - Chain attacks",
-        "background_process - Plant traps",
-        "environment_vars - Control the terrain"
-      ]
-    },
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "purpose": "GitHub API access - infiltrate and control repositories",
-      "abilities_enabled": [
-        "create_repo - Summon new repositories",
-        "push_code - Plant code in the shadows",
-        "manage_issues - Control the narrative",
-        "list_repos - Scout the landscape",
-        "manage_workflows - Automate the infiltration"
-      ],
-      "tier_required": 1,
-      "note": "Equipped for Repository Scout quest"
-    },
     "ssh": {
       "command": "npx",
       "args": ["-y", "@anthropic/server-ssh"],
       "purpose": "Remote system access - extend your reach",
-      "abilities_enabled": [
-        "connect - Infiltrate remote systems",
-        "execute_remote - Strike from anywhere",
-        "tunnel - Create hidden passages",
-        "scp - Extract/plant files"
+      "env": {
+        "SSH_PRIVATE_KEY_PATH": "${HOME}/.ssh/id_rsa"
+      },
+      "autoApprove": [
+        "connect",
+        "execute_remote"
       ],
-      "optional": true,
-      "unlock_level": 3
+      "disabled": true,
+      "note": "Tier 3 unlock - Lockpicks of SSH"
     },
     "docker": {
       "command": "npx",
