@@ -1,32 +1,32 @@
-# Active Build
+# Active Build: rogue
 
-**Status:** None equipped
+**Status:** Equipped
+
+## Build Info
+
+```json
+{
+  "build": {
+    "id": "rogue",
+    "name": "The Rogue",
+    "alias": "Terminal Specialist / CLI Master",
+    "tagline": "In the shadows of the command line",
+    "lore": {
+      "origin": "Rogues never left the terminal. While others moved to GUIs and IDEs, rogues stayed in the darkness of the command prompt. They know every flag, every pipe, every hidden passage.",
+      "philosophy": "The terminal is the truth. GUIs are lies we tell ourselves. Everything is a file. Everything can be piped. Everything can be automated.",
+      "weakness": "Isolation. Rogues often work alone, in the dark. Their skills don't transfer to teams who don't speak their language.",
+      "mastery_path": "From basic commands (the apprentice's knife) to shell scripting (the journeyman's toolkit) to system administration (the master's domain) to infrastructure as code (the shadow realm)."
+    },
+    "stats": {
+      "creativity": 4,
+      "autonomy_dependency": 6,
+      "technical_depth": 10,
+      "iteration_speed": 8,
+      "context_sensitivity": 3,
+      "precision": 10
+    },
+```
 
 ---
 
-## To Begin
-
-Say: `load [wizard|warrior|ranger|paladin|rogue] build`
-
----
-
-## Quick Reference
-
-| Build | Alias | Core Mechanic |
-|-------|-------|---------------|
-| Wizard | Prompt Architect | Reality through language |
-| Warrior | Agentic Commander | Delegation & oversight |
-| Ranger | Scaffolder | Rapid iteration |
-| Paladin | PM/Architect | Planning & coordination |
-| Rogue | CLI Master | Terminal mastery |
-
----
-
-## When Equipped
-
-This file contains the active build's:
-- Full lore and philosophy
-- Stats and playstyle
-- Current tier
-- Equipped gear
-- Voice guidelines
+*Loaded at: Sun Feb  1 20:35:15 +0545 2026*

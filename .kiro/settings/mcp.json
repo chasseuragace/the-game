@@ -1,83 +1,34 @@
 {
   "mcpServers": {
-    "piper-tts": {
-      "command": "dart",
-      "args": [
-        "/Volumes/shared_code/skyrim/piper/piper_mcp_server.dart"
-      ],
-      "autoApprove": [
-        "speak"
-      ]
-    },
-    "playwright": {
+    "github": {
       "command": "npx",
       "args": [
-        "@playwright/mcp@latest"
+        "-y",
+        "@modelcontextprotocol/server-github"
       ],
-      "autoApprove": [
-        "browser_click",
-        "browser_type",
-        "browser_navigate",
-        "browser_wait_for",
-        "browser_evaluate",
-        "browser_take_screenshot",
-        "browser_console_messages",
-        "browser_snapshot",
-        "browser_run_code",
-        "browser_handle_dialog",
-        "browser_select_option",
-        "browser_press_key",
-        "browser_fill_form",
-        "browser_resize",
-        "browser_network_requests",
-        "browser_close"
+      "purpose": "GitHub API access - infiltrate and control repositories",
+      "abilities_enabled": [
+        "create_repo - Summon new repositories",
+        "push_code - Plant code in the shadows",
+        "manage_issues - Control the narrative",
+        "list_repos - Scout the landscape",
+        "manage_workflows - Automate the infiltration"
       ],
-      "disabled": true
+      "tier_required": 1,
+      "note": "Equipped for Repository Scout quest"
     },
-    "postgres": {
-      "command": "docker",
+    "shell": {
+      "command": "npx",
       "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-e",
-        "DATABASE_URI",
-        "crystaldba/postgres-mcp",
-        "--access-mode=unrestricted"
+        "-y",
+        "@modelcontextprotocol/server-shell"
       ],
-      "env": {
-        "DATABASE_URI": "postgresql://postgres:postgres@host.docker.internal:5431/app_db"
-      },
-      "disabled": true,
-      "autoApprove": [
-        "query",
-        "execute",
-        "list_tables",
-        "describe_table",
-        "get_table_schema",
-        "list_objects",
-        "get_object_details",
-        "execute_sql",
-        "list_schemas"
-      ]
-    },
-    "postgres_dev_server": {
-      "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-e",
-        "DATABASE_URI",
-        "crystaldba/postgres-mcp",
-        "--access-mode=unrestricted"
-      ],
-      "env": {
-        "DATABASE_URI": "postgresql://postgres:postgres@localhost:5435/app_db"
-      },
-      "disabled": true,
-      "autoApprove": [
-        "list_schemas"
+      "purpose": "Direct command execution - the rogue's primary weapon",
+      "abilities_enabled": [
+        "execute_command - Strike from the shadows",
+        "pipe_commands - Chain attacks",
+        "background_process - Plant traps",
+        "environment_vars - Control the terrain"
       ]
     },
     "filesystem": {
@@ -85,46 +36,62 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "/Volumes",
-        "/Users/ajaydahal"
+        "/"
       ],
-      "autoApprove": [
-        "read_text_file",
-        "write_file",
-        "edit_file",
-        "list_directory",
-        "search_files",
-        "read_multiple_files",
-        "directory_tree",
-        "list_allowed_directories"
+      "purpose": "Full filesystem access - the rogue sees all",
+      "abilities_enabled": [
+        "read_file - Read any file",
+        "write_file - Modify anything",
+        "list_directory - Survey the system",
+        "search_files - Find hidden treasures"
       ],
-      "disabled": true
+      "warning": "Root access is a double-edged dagger"
     },
-    "cartographer": {
-      "name": "Cartographer",
-      "description": "Codebase API analysis and mapping. Find endpoints, trace calls, analyze impact.",
-      "command": "bash",
+    "ssh": {
+      "command": "npx",
       "args": [
-        "-c",
-        "cd /Volumes/shared_code/code_shared/api-tracer-project && npm run mcp"
+        "-y",
+        "@anthropic/server-ssh"
       ],
-      "disabled": true,
-      "autoApprove": [
-        "find_endpoint",
-        "find_project",
-        "trace_call_chain",
-        "find_relationships",
-        "find_similar",
-        "impact_analysis",
-        "unused_endpoints",
-        "get_stats",
-        "get_graph",
-        "scan_workspace",
-        "get_health"
+      "purpose": "Remote system access - extend your reach",
+      "abilities_enabled": [
+        "connect - Infiltrate remote systems",
+        "execute_remote - Strike from anywhere",
+        "tunnel - Create hidden passages",
+        "scp - Extract/plant files"
       ],
-      "disabledTools": [
-        "find_project"
+      "optional": true,
+      "unlock_level": 3
+    },
+    "docker": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-docker"
+      ],
+      "purpose": "Container manipulation - isolated strike zones",
+      "abilities_enabled": [
+        "run_container - Deploy shadow agents",
+        "exec_container - Infiltrate running systems",
+        "build_image - Craft custom tools",
+        "network - Control the shadows"
       ]
+    },
+    "kubernetes": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic/server-kubernetes"
+      ],
+      "purpose": "Orchestration mastery - command the cloud",
+      "abilities_enabled": [
+        "kubectl - Full cluster control",
+        "helm - Deploy packages",
+        "logs - Surveillance",
+        "exec - Remote infiltration"
+      ],
+      "optional": true,
+      "unlock_level": 7
     }
   }
 }
