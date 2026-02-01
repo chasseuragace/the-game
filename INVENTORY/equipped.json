@@ -1,10 +1,15 @@
 {
-  "active_build": null,
+  "active_build": "rogue",
   "gear": {
-    "primary_weapon": null,
+    "primary_weapon": "Daggers of Shell Commands (shell MCP)",
     "secondary_weapon": null,
     "armor": null,
-    "trinket": null
+    "trinket": null,
+    "artifact": "Sigil of GitHub (github MCP)"
   },
-  "mcp_servers": []
+  "mcp_servers": [
+    "shell",
+    "filesystem",
+    "github"
+  ]
 }

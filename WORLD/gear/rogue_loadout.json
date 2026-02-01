@@ -32,6 +32,20 @@
         "environment_vars - Control the terrain"
       ]
     },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "purpose": "GitHub API access - infiltrate and control repositories",
+      "abilities_enabled": [
+        "create_repo - Summon new repositories",
+        "push_code - Plant code in the shadows",
+        "manage_issues - Control the narrative",
+        "list_repos - Scout the landscape",
+        "manage_workflows - Automate the infiltration"
+      ],
+      "tier_required": 1,
+      "note": "Equipped for Repository Scout quest"
+    },
     "ssh": {
       "command": "npx",
       "args": ["-y", "@anthropic/server-ssh"],

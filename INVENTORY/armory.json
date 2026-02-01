@@ -28,6 +28,7 @@
     "primary": { "name": "Daggers of Shell Commands", "mcp": "shell" },
     "secondary": { "name": "Lockpicks of SSH", "mcp": "ssh", "tier_required": 3 },
     "armor": { "name": "Cloak of Containers", "mcp": "docker" },
-    "trinket": { "name": "Shadow Network", "mcp": "kubernetes", "tier_required": 4 }
+    "trinket": { "name": "Shadow Network", "mcp": "kubernetes", "tier_required": 4 },
+    "artifact": { "name": "Sigil of GitHub", "mcp": "github", "tier_required": 1 }
   }
 }

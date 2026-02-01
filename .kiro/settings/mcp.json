@@ -4,6 +4,9 @@
       "command": "dart",
       "args": [
         "/Volumes/shared_code/skyrim/piper/piper_mcp_server.dart"
+      ],
+      "autoApprove": [
+        "speak"
       ]
     },
     "playwright": {
