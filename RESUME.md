@@ -9,19 +9,19 @@
 
 | Field | Value |
 |-------|-------|
-| **Build** | _None equipped_ |
-| **Tier** | - |
+| **Build** | Rogue (CLI Master) |
+| **Tier** | Pickpocket |
 | **Mindstate** | _Not loaded_ |
-| **Location** | _Not set_ |
+| **Location** | Repository Scout Quest |
 | **Session** | 1 |
 
 ---
 
 ## CONTEXT
 
-**Working on:** Nothing yet  
-**Last action:** Game initialized  
-**Next action:** Load a build or import mindstate  
+**Working on:** The Repository Scout - build git repo discovery tool  
+**Last action:** Quest initiated, Rogue build equipped  
+**Next action:** Create repo discovery CLI tool  
 **Blockers:** None
 
 ---
@@ -29,28 +29,29 @@
 ## QUICK STATUS
 
 ```
-Build:     [ none ]           Map:      [ claude.ai ]
-Tier:      [ - ]              Location: [ - ]
-Trust:     [ - ]              Quest:    [ none ]
-Voice:     [ default ]        Context:  [ 100% ]
+Build:     [ rogue ]          Map:      [ repo-scout ]
+Tier:      [ pickpocket ]     Location: [ dojo ]
+Trust:     [ supervised ]     Quest:    [ repository-scout ]
+Voice:     [ rogue ]          Context:  [ 100% ]
 ```
 
 ---
 
 ## RESUME POINT
 
-New game. The framework is loaded.
+New game. The framework is loaded. Rogue build equipped. Heading to the dojo to build the Repository Scout tool.
 
-**To start:**
-- `load [wizard|warrior|ranger|paladin|rogue] build` - Equip a class
-- `load mindstate` - Import your worldview
-- `show builds` - See all classes
-- `help` - All commands
+**Current Quest:**
+- Build a CLI tool to discover and manage git repos on the PC
+- Create new repos from CLI
+- List all available repos
+- Push current repo to remote
+- Update game state
 
-**The tension:**
-> Marketing says: "Your AI thinking partner"  
-> Reality shows: 49% automation, 7-hour autonomous sessions  
-> The game: No one knows what winning looks like
+**To continue:**
+- `dojo` - Enter rogue training for this quest
+- `status` - Full character sheet
+- `quest log` - See active quest details
 
 ---
 
