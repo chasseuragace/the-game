@@ -40,8 +40,7 @@
         "pipe_commands - Chain attacks",
         "background_process - Plant traps",
         "environment_vars - Control the terrain"
-      ],
-      "disabled": true
+      ]
     },
     "github": {
       "command": "npx",
@@ -58,27 +57,7 @@
         "manage_workflows - Automate the infiltration"
       ],
       "tier_required": 1,
-      "note": "Equipped for Repository Scout quest",
-      "autoApprove": [
-        "get_file_contents"
-      ]
-    },
-    "git": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-git"
-      ],
-      "purpose": "Git operations - Local repository control",
-      "autoApprove": [
-        "get_repository_status",
-        "get_file_contents",
-        "list_commits",
-        "list_branches",
-        "create_branch",
-        "get_commit_details"
-      ],
-      "disabled": true
+      "note": "Equipped for Repository Scout quest"
     },
     "ssh": {
       "command": "npx",
@@ -94,8 +73,7 @@
         "scp - Extract/plant files"
       ],
       "optional": true,
-      "unlock_level": 3,
-      "disabled": true
+      "unlock_level": 3
     },
     "docker": {
       "command": "npx",
@@ -109,8 +87,7 @@
         "exec_container - Infiltrate running systems",
         "build_image - Craft custom tools",
         "network - Control the shadows"
-      ],
-      "disabled": true
+      ]
     },
     "kubernetes": {
       "command": "npx",
@@ -126,8 +103,7 @@
         "exec - Remote infiltration"
       ],
       "optional": true,
-      "unlock_level": 7,
-      "disabled": true
+      "unlock_level": 7
     }
   }
 }

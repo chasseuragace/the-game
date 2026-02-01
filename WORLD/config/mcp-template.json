@@ -66,23 +66,6 @@
         "get_pull_request"
       ],
       "disabled": false
-    },
-    "git": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-git"
-      ],
-      "purpose": "Git operations - Local repository control",
-      "autoApprove": [
-        "get_repository_status",
-        "get_file_contents",
-        "list_commits",
-        "list_branches",
-        "create_branch",
-        "get_commit_details"
-      ],
-      "disabled": false
     }
   }
 }
