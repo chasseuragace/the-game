@@ -27,13 +27,13 @@
   "rogue": {
     "tier": 1,
     "tier_name": "Pickpocket",
-    "skills_mastered": [],
-    "quests_completed": []
+    "skills_mastered": ["Shadow Walking", "Sleight of Hand"],
+    "quests_completed": ["The Repository Scout"]
   },
   "meta": {
-    "total_sessions": 0,
-    "total_quests_completed": 0,
-    "achievements": [],
-    "favorite_build": null
+    "total_sessions": 1,
+    "total_quests_completed": 1,
+    "achievements": ["Repository Scout - Discovered git repo discovery"],
+    "favorite_build": "rogue"
   }
 }
