@@ -55,6 +55,15 @@
       ],
       "disabled": false
     },
+    "shell": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-shell"
+      ],
+      "purpose": "Shell MCP - Execute terminal commands securely",
+      "disabled": false
+    },
     "ssh": {
       "disabled": true,
       "note": "Tier 3 unlock"

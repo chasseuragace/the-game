@@ -54,6 +54,15 @@
         "get_pull_request"
       ],
       "disabled": false
+    },
+    "shell": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-shell"
+      ],
+      "purpose": "Shell MCP - Execute terminal commands securely",
+      "disabled": false
     }
   }
 }
