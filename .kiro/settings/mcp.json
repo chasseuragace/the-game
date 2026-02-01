@@ -17,16 +17,16 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "/home/wizard/artifacts",
-        "/home/wizard/spellbook"
+        "/"
       ],
-      "purpose": "Create and manipulate artifacts - the wizard's primary manifestation ability",
-      "spells_enabled": [
-        "read_file - Scry existing artifacts",
-        "write_file - Manifest new artifacts",
-        "list_directory - Survey the arcane library",
-        "create_directory - Establish new domains"
-      ]
+      "purpose": "Full filesystem access - the rogue sees all",
+      "abilities_enabled": [
+        "read_file - Read any file",
+        "write_file - Modify anything",
+        "list_directory - Survey the system",
+        "search_files - Find hidden treasures"
+      ],
+      "warning": "Root access is a double-edged dagger"
     },
     "shell": {
       "command": "npx",
@@ -34,75 +34,100 @@
         "-y",
         "@modelcontextprotocol/server-shell"
       ],
-      "purpose": "Shell commands - Daggers of Shell Commands",
-      "autoApprove": [
-        "execute_command"
+      "purpose": "Direct command execution - the rogue's primary weapon",
+      "abilities_enabled": [
+        "execute_command - Strike from the shadows",
+        "pipe_commands - Chain attacks",
+        "background_process - Plant traps",
+        "environment_vars - Control the terrain"
       ],
-      "disabled": false
+      "disabled": true
     },
     "github": {
       "command": "npx",
       "args": [
         "-y",
-        "@modelcontextprotocol/server-github@latest"
+        "@modelcontextprotocol/server-github"
       ],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
-      },
-      "purpose": "GitHub API - Sigil of GitHub",
+      "purpose": "GitHub API access - infiltrate and control repositories",
+      "abilities_enabled": [
+        "create_repo - Summon new repositories",
+        "push_code - Plant code in the shadows",
+        "manage_issues - Control the narrative",
+        "list_repos - Scout the landscape",
+        "manage_workflows - Automate the infiltration"
+      ],
+      "tier_required": 1,
+      "note": "Equipped for Repository Scout quest",
       "autoApprove": [
-        "create_repo",
-        "list_repos",
-        "get_repo",
-        "push_code",
-        "create_issue",
-        "list_issues",
-        "get_issue",
-        "create_pull_request",
-        "list_pull_requests",
-        "get_pull_request"
-      ],
-      "disabled": false
-    },
-    "memory": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-memory"
-      ],
-      "purpose": "Persist context across sessions - the wizard's ability to remember incantations",
-      "spells_enabled": [
-        "store_memory - Bind knowledge to persistence",
-        "retrieve_memory - Recall ancient context",
-        "list_memories - Index the mind palace"
+        "get_file_contents"
       ]
     },
-    "fetch": {
+    "git": {
       "command": "npx",
       "args": [
         "-y",
-        "@modelcontextprotocol/server-fetch"
+        "@modelcontextprotocol/server-git"
       ],
-      "purpose": "Channel external knowledge - the wizard reaches beyond their domain",
-      "spells_enabled": [
-        "fetch_url - Summon distant texts",
-        "fetch_html - Parse the web's grimoire"
-      ]
+      "purpose": "Git operations - Local repository control",
+      "autoApprove": [
+        "get_repository_status",
+        "get_file_contents",
+        "list_commits",
+        "list_branches",
+        "create_branch",
+        "get_commit_details"
+      ],
+      "disabled": true
     },
-    "puppeteer": {
+    "ssh": {
       "command": "npx",
       "args": [
         "-y",
-        "@modelcontextprotocol/server-puppeteer"
+        "@anthropic/server-ssh"
       ],
-      "purpose": "Manifest visual artifacts - the wizard's illusion school",
-      "spells_enabled": [
-        "screenshot - Capture reality",
-        "navigate - Traverse the web plane",
-        "interact - Manipulate distant interfaces"
+      "purpose": "Remote system access - extend your reach",
+      "abilities_enabled": [
+        "connect - Infiltrate remote systems",
+        "execute_remote - Strike from anywhere",
+        "tunnel - Create hidden passages",
+        "scp - Extract/plant files"
       ],
       "optional": true,
-      "unlock_level": 5
+      "unlock_level": 3,
+      "disabled": true
+    },
+    "docker": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-docker"
+      ],
+      "purpose": "Container manipulation - isolated strike zones",
+      "abilities_enabled": [
+        "run_container - Deploy shadow agents",
+        "exec_container - Infiltrate running systems",
+        "build_image - Craft custom tools",
+        "network - Control the shadows"
+      ],
+      "disabled": true
+    },
+    "kubernetes": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic/server-kubernetes"
+      ],
+      "purpose": "Orchestration mastery - command the cloud",
+      "abilities_enabled": [
+        "kubectl - Full cluster control",
+        "helm - Deploy packages",
+        "logs - Surveillance",
+        "exec - Remote infiltration"
+      ],
+      "optional": true,
+      "unlock_level": 7,
+      "disabled": true
     }
   }
 }

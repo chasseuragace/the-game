@@ -1,4 +1,4 @@
-# Active Build: wizard
+# Active Build: rogue
 
 **Status:** Equipped
 
@@ -7,26 +7,26 @@
 ```json
 {
   "build": {
-    "id": "wizard",
-    "name": "The Wizard",
-    "alias": "Prompt Architect",
-    "tagline": "Reality alteration through language",
+    "id": "rogue",
+    "name": "The Rogue",
+    "alias": "Terminal Specialist / CLI Master",
+    "tagline": "In the shadows of the command line",
     "lore": {
-      "origin": "Born from the first conversations with language models. Wizards discovered that words themselves could reshape digital reality. They don't write code—they speak it into existence.",
-      "philosophy": "The spell is the prompt. The artifact is the manifestation. Control comes not from syntax, but from intent clearly expressed.",
-      "weakness": "Dependent on the model's interpretation. A poorly worded spell misfires. Context windows are their mana pools—finite and precious.",
-      "mastery_path": "From simple incantations (single prompts) to complex rituals (multi-turn reasoning chains) to reality weaving (full application generation)."
+      "origin": "Rogues never left the terminal. While others moved to GUIs and IDEs, rogues stayed in the darkness of the command prompt. They know every flag, every pipe, every hidden passage.",
+      "philosophy": "The terminal is the truth. GUIs are lies we tell ourselves. Everything is a file. Everything can be piped. Everything can be automated.",
+      "weakness": "Isolation. Rogues often work alone, in the dark. Their skills don't transfer to teams who don't speak their language.",
+      "mastery_path": "From basic commands (the apprentice's knife) to shell scripting (the journeyman's toolkit) to system administration (the master's domain) to infrastructure as code (the shadow realm)."
     },
     "stats": {
-      "creativity": 10,
-      "autonomy_dependency": 3,
-      "technical_depth": 5,
-      "iteration_speed": 7,
-      "context_sensitivity": 9
+      "creativity": 4,
+      "autonomy_dependency": 6,
+      "technical_depth": 10,
+      "iteration_speed": 8,
+      "context_sensitivity": 3,
+      "precision": 10
     },
-    "playstyle": {
 ```
 
 ---
 
-*Loaded at: Sun Feb  1 20:39:33 +0545 2026*
+*Loaded at: Sun Feb  1 20:45:50 +0545 2026*
