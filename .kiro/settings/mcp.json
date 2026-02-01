@@ -17,93 +17,43 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "/"
+        "."
       ],
-      "purpose": "Full filesystem access - the rogue sees all",
-      "abilities_enabled": [
-        "read_file - Read any file",
-        "write_file - Modify anything",
-        "list_directory - Survey the system",
-        "search_files - Find hidden treasures"
+      "purpose": "Filesystem access - Shadow Walking",
+      "autoApprove": [
+        "read_text_file",
+        "write_file",
+        "edit_file",
+        "list_directory",
+        "search_files",
+        "read_multiple_files",
+        "directory_tree"
       ],
-      "warning": "Root access is a double-edged dagger"
-    },
-    "shell": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-shell"
-      ],
-      "purpose": "Direct command execution - the rogue's primary weapon",
-      "abilities_enabled": [
-        "execute_command - Strike from the shadows",
-        "pipe_commands - Chain attacks",
-        "background_process - Plant traps",
-        "environment_vars - Control the terrain"
-      ]
+      "disabled": false
     },
     "github": {
       "command": "npx",
       "args": [
         "-y",
-        "@modelcontextprotocol/server-github"
+        "@modelcontextprotocol/server-github@latest"
       ],
-      "purpose": "GitHub API access - infiltrate and control repositories",
-      "abilities_enabled": [
-        "create_repo - Summon new repositories",
-        "push_code - Plant code in the shadows",
-        "manage_issues - Control the narrative",
-        "list_repos - Scout the landscape",
-        "manage_workflows - Automate the infiltration"
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      },
+      "purpose": "GitHub API - Sigil of GitHub",
+      "autoApprove": [
+        "create_repo",
+        "list_repos",
+        "get_repo",
+        "push_code",
+        "create_issue",
+        "list_issues",
+        "get_issue",
+        "create_pull_request",
+        "list_pull_requests",
+        "get_pull_request"
       ],
-      "tier_required": 1,
-      "note": "Equipped for Repository Scout quest"
-    },
-    "ssh": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@anthropic/server-ssh"
-      ],
-      "purpose": "Remote system access - extend your reach",
-      "abilities_enabled": [
-        "connect - Infiltrate remote systems",
-        "execute_remote - Strike from anywhere",
-        "tunnel - Create hidden passages",
-        "scp - Extract/plant files"
-      ],
-      "optional": true,
-      "unlock_level": 3
-    },
-    "docker": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-docker"
-      ],
-      "purpose": "Container manipulation - isolated strike zones",
-      "abilities_enabled": [
-        "run_container - Deploy shadow agents",
-        "exec_container - Infiltrate running systems",
-        "build_image - Craft custom tools",
-        "network - Control the shadows"
-      ]
-    },
-    "kubernetes": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@anthropic/server-kubernetes"
-      ],
-      "purpose": "Orchestration mastery - command the cloud",
-      "abilities_enabled": [
-        "kubectl - Full cluster control",
-        "helm - Deploy packages",
-        "logs - Surveillance",
-        "exec - Remote infiltration"
-      ],
-      "optional": true,
-      "unlock_level": 7
+      "disabled": false
     }
   }
 }

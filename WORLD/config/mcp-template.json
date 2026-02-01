@@ -31,18 +31,6 @@
       ],
       "disabled": false
     },
-    "shell": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-shell"
-      ],
-      "purpose": "Shell commands - Daggers of Shell Commands",
-      "autoApprove": [
-        "execute_command"
-      ],
-      "disabled": false
-    },
     "github": {
       "command": "npx",
       "args": [
@@ -66,6 +54,18 @@
         "get_pull_request"
       ],
       "disabled": false
+    },
+    "ssh": {
+      "disabled": true,
+      "note": "Tier 3 unlock"
+    },
+    "docker": {
+      "disabled": true,
+      "note": "Tier 2 unlock"
+    },
+    "kubernetes": {
+      "disabled": true,
+      "note": "Tier 3 unlock"
     }
   }
 }

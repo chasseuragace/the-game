@@ -10,42 +10,16 @@
   },
   "mcpServers": {
     "ssh": {
-      "command": "npx",
-      "args": ["-y", "@anthropic/server-ssh"],
-      "purpose": "Remote system access - extend your reach",
-      "env": {
-        "SSH_PRIVATE_KEY_PATH": "${HOME}/.ssh/id_rsa"
-      },
-      "autoApprove": [
-        "connect",
-        "execute_remote"
-      ],
       "disabled": true,
       "note": "Tier 3 unlock - Lockpicks of SSH"
     },
     "docker": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-docker"],
-      "purpose": "Container manipulation - isolated strike zones",
-      "abilities_enabled": [
-        "run_container - Deploy shadow agents",
-        "exec_container - Infiltrate running systems",
-        "build_image - Craft custom tools",
-        "network - Control the shadows"
-      ]
+      "disabled": true,
+      "note": "Tier 2 unlock - Cloak of Containers"
     },
     "kubernetes": {
-      "command": "npx",
-      "args": ["-y", "@anthropic/server-kubernetes"],
-      "purpose": "Orchestration mastery - command the cloud",
-      "abilities_enabled": [
-        "kubectl - Full cluster control",
-        "helm - Deploy packages",
-        "logs - Surveillance",
-        "exec - Remote infiltration"
-      ],
-      "optional": true,
-      "unlock_level": 7
+      "disabled": true,
+      "note": "Tier 3 unlock - Shadow Network"
     }
   },
   "starting_gear": {

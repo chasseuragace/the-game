@@ -134,15 +134,22 @@ merge_mcp_config() {
     die "MCP template not found: $MCP_TEMPLATE"
   fi
   
-  # Merge new servers into template
+  # Filter out disabled MCPs from new_servers before merging
+  local filtered_servers
+  filtered_servers=$(echo "$new_servers" | jq 'with_entries(select(.value.disabled != true))')
+  
+  # Merge new servers into template, respecting disabled flags
   local merged
-  merged=$(echo "$base_config" | jq ".mcpServers += $new_servers")
+  merged=$(echo "$base_config" | jq ".mcpServers += $filtered_servers")
+  
+  # Also filter out any disabled MCPs from the final result
+  merged=$(echo "$merged" | jq '.mcpServers |= with_entries(select(.value.disabled != true))')
   
   # Write to workspace config
   mkdir -p "$(dirname "$MCP_CONFIG")"
   echo "$merged" | jq '.' > "$MCP_CONFIG"
   
-  log_success "MCP servers synced to workspace config (voice MCP always equipped)"
+  log_success "MCP servers synced to workspace config (voice MCP always equipped, disabled MCPs filtered)"
 }
 
 # ============================================================================
