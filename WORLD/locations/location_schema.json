@@ -1,0 +1,91 @@
+{
+  "location_schema": {
+    "concept": "A location is a specific context within a map. It includes the project, the state, and the history.",
+    "schema": {
+      "id": "string - unique identifier for this location",
+      "name": "string - human readable name",
+      "map_type": "local | remote",
+      "map_subtype": "terminal | ide | browser | container | vps | cicd | cloud | production",
+      "project": {
+        "name": "string",
+        "path": "string - filesystem or remote path",
+        "repo": "string - git remote if applicable",
+        "branch": "string - current branch"
+      },
+      "state": {
+        "last_action": "string - what was the last thing done here",
+        "current_objective": "string - what are we trying to accomplish",
+        "blockers": ["array of strings - what's stopping progress"],
+        "next_steps": ["array of strings - immediate next actions"]
+      },
+      "history": {
+        "created_at": "timestamp",
+        "last_visited": "timestamp",
+        "visit_count": "number",
+        "saves": ["array of save references"]
+      },
+      "context": {
+        "relevant_files": ["array of file paths"],
+        "relevant_docs": ["array of doc references"],
+        "environment_vars": {},
+        "dependencies": ["array of key dependencies"]
+      }
+    }
+  },
+  "example_location": {
+    "id": "frontend-dashboard-refactor",
+    "name": "Dashboard Refactor Project",
+    "map_type": "local",
+    "map_subtype": "ide",
+    "project": {
+      "name": "company-dashboard",
+      "path": "/Users/dev/projects/dashboard",
+      "repo": "git@github.com:company/dashboard.git",
+      "branch": "feature/refactor-components"
+    },
+    "state": {
+      "last_action": "Extracted Button component to shared library",
+      "current_objective": "Refactor all form components to use new design system",
+      "blockers": ["Waiting on design tokens from design team"],
+      "next_steps": [
+        "Create FormInput component",
+        "Create FormSelect component",
+        "Update existing forms to use new components"
+      ]
+    },
+    "history": {
+      "created_at": "2025-01-10T10:00:00Z",
+      "last_visited": "2025-01-12T15:30:00Z",
+      "visit_count": 5,
+      "saves": ["save_001", "save_002", "save_003"]
+    },
+    "context": {
+      "relevant_files": [
+        "src/components/Button.tsx",
+        "src/design-system/tokens.ts",
+        "docs/component-guidelines.md"
+      ],
+      "relevant_docs": [
+        "Figma: Design System v2",
+        "RFC: Component Library Architecture"
+      ],
+      "environment_vars": {
+        "NODE_ENV": "development",
+        "API_URL": "http://localhost:3001"
+      },
+      "dependencies": [
+        "react@18",
+        "tailwindcss@3",
+        "@radix-ui/react-*"
+      ]
+    }
+  },
+  "operations": {
+    "new_location": "Create a fresh location for a new project/context",
+    "load_location": "Resume work at a saved location",
+    "save_location": "Checkpoint current state before switching",
+    "list_locations": "See all saved locations",
+    "search_locations": "Find locations by project, state, or time"
+  },
+  "quick_load": "Load location [id]. What was I doing? What's next? Show me the relevant context."
+}

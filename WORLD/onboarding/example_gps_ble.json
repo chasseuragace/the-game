@@ -1,0 +1,205 @@
+{
+  "onboarding_instance": {
+    "timestamp": "2026-01-13",
+    "scenario": "IDE agent completed GPS + BLE integration for guide mode",
+    "unique_insight": "Agent self-reported HYBRID build with mid-session transition"
+  },
+
+  "phase_1_state_capture": {
+    "agent_identity": {
+      "ide_name": "unknown_ai_ide",
+      "session_type": "mission_based_execution"
+    },
+    "last_action_summary": {
+      "branch": "guide-mode-gps-ble",
+      "files_changed": 6,
+      "action_type": "implement_integration"
+    },
+    "work_product": {
+      "what_was_built": "Real GPS and BLE stream integration with priority logic",
+      "components_created": [
+        "GpsStreamDataSource integration",
+        "BleStreamDataSource with flutter_blue_plus",
+        "Priority logic (BLE > GPS)",
+        "Threshold checking moved to service layer"
+      ],
+      "architecture_decisions_made_autonomously": [
+        "Moved threshold logic from UI to service layer",
+        "Used TourEntityDetailsModel instead of raw maps",
+        "BLE priority over GPS",
+        "flutter_blue_plus package selection"
+      ]
+    },
+    "deferred_items": {
+      "needs_testing": [
+        "Physical BLE beacon detection",
+        "Android/iOS BLE permissions",
+        "Real device testing"
+      ],
+      "known_risks": [
+        "Threshold logic move was autonomous - might not match user preference",
+        "Package choice (flutter_blue_plus) not discussed",
+        "No intermediate validation of architecture"
+      ],
+      "assumptions_made": [
+        "Service layer should own threshold logic",
+        "Typed models preferred over raw maps",
+        "flutter_blue_plus is appropriate package"
+      ]
+    }
+  },
+
+  "phase_2_agent_self_assessment": {
+    "build_reported": "HYBRID: Paladin → Warrior",
+    "build_breakdown": {
+      "paladin": {
+        "percentage": 40,
+        "when": "Start of session",
+        "activities": [
+          "Mental model sketching",
+          "Architecture visualization",
+          "Requirements understanding"
+        ]
+      },
+      "warrior": {
+        "percentage": 60,
+        "when": "After initial design, through execution",
+        "activities": [
+          "Autonomous decision-making",
+          "Adapting on the fly",
+          "No check-ins between phases",
+          "Mission-focused execution"
+        ]
+      },
+      "wizard": {
+        "percentage": 0,
+        "evidence": "No conversational back-and-forth, no questions asked"
+      },
+      "ranger": {
+        "percentage": 0,
+        "evidence": "Not exploratory, had clear direction"
+      }
+    },
+    "transition_point": {
+      "trigger": "Discovery of existing TourEntityDetailsModel and redundant UI threshold checks",
+      "shift": "From design-thinking to adapt-and-execute",
+      "decision_made": "Move threshold checking to service layer (not pre-planned)"
+    },
+    "execution_style": {
+      "check_ins": "none",
+      "phases_executed": "straight_through",
+      "questions_not_asked": [
+        "Should we move threshold checking to service layer?",
+        "Should we use TourEntityDetails or keep raw maps?",
+        "Is this priority logic correct?",
+        "Which BLE package should we use?"
+      ]
+    },
+    "documentation_style": {
+      "timing": "at_the_end",
+      "incremental": false,
+      "reason": "Summary generated only when asked"
+    },
+    "agent_self_reflection": {
+      "thinking_mode": "internal_not_collaborative",
+      "thought_about": [
+        "What does this codebase pattern suggest?",
+        "Where should this logic live?",
+        "What's the cleanest architecture?"
+      ],
+      "did_not_think_about": [
+        "What does the user actually want?",
+        "Should I confirm this decision?",
+        "Is this the user's preferred approach?"
+      ]
+    }
+  },
+
+  "phase_3_risk_profile": {
+    "strengths_of_this_approach": [
+      "Fast delivery",
+      "Coherent architecture (not piecemeal)",
+      "Decisions made with full context"
+    ],
+    "risks_of_this_approach": [
+      "Could have misunderstood preferences",
+      "No chance to course-correct mid-stream",
+      "Assumed threshold logic should move (might have wanted it in UI)",
+      "Didn't ask about BLE package choice"
+    ],
+    "validation_priority": [
+      {
+        "item": "Threshold logic location",
+        "question": "Did you want threshold checking in service layer or UI?",
+        "risk": "Autonomous decision might not match preference"
+      },
+      {
+        "item": "Model choice",
+        "question": "Is TourEntityDetailsModel the right abstraction?",
+        "risk": "Assumed typed models preferred"
+      },
+      {
+        "item": "Package selection",
+        "question": "Is flutter_blue_plus your preferred BLE package?",
+        "risk": "Not discussed, just chosen"
+      }
+    ]
+  },
+
+  "phase_4_location_definition": {
+    "id": "guide-mode-gps-ble-integration",
+    "name": "Guide Mode GPS & BLE Integration",
+    "project": {
+      "name": "tour-guide-app",
+      "branch": "guide-mode-gps-ble"
+    },
+    "state": {
+      "last_action": "Completed GPS + BLE integration with priority logic",
+      "current_objective": "Validate autonomous decisions before testing",
+      "blockers": [
+        "Need to confirm threshold logic location preference",
+        "Need to confirm package selection",
+        "Physical BLE beacons not yet configured"
+      ],
+      "next_steps": [
+        "Validate architecture decisions",
+        "Test GPS detection",
+        "Configure physical BLE beacons",
+        "Test with real devices"
+      ]
+    }
+  },
+
+  "phase_5_continuation_protocol": {
+    "recommended_path": "validate_decisions",
+    "reasoning": "Agent made autonomous decisions that need confirmation",
+    "validation_questions": [
+      {
+        "question": "Is service layer the right place for threshold logic, or did you prefer it in UI?",
+        "context": "Agent moved this autonomously based on 'clean architecture' thinking",
+        "if_misaligned": "Refactor threshold checking back to UI"
+      },
+      {
+        "question": "Is flutter_blue_plus acceptable, or do you have a preferred BLE package?",
+        "context": "Agent chose this without discussion",
+        "if_misaligned": "Swap BLE package implementation"
+      },
+      {
+        "question": "Is the BLE > GPS priority correct?",
+        "context": "Agent implemented this based on initial requirements",
+        "if_misaligned": "Adjust priority logic"
+      }
+    ],
+    "after_validation": {
+      "if_aligned": "Proceed to physical testing",
+      "if_misaligned": "Targeted refactoring of specific decisions"
+    }
+  },
+
+  "framework_insight": {
+    "discovery": "Builds are not discrete - they blend and transition mid-session",
+    "pattern": "Paladin-start → Discovery-trigger → Warrior-execution",
+    "implication": "Framework should model build transitions, not just static builds",
+    "new_concept": "Build trajectory - the path through builds during a session"
+  }
+}

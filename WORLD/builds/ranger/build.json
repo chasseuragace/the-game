@@ -1,0 +1,29 @@
+{
+  "build": {
+    "id": "ranger",
+    "name": "The Ranger",
+    "alias": "Scaffolder / Boilerplate Generator",
+    "tagline": "Strike fast, iterate faster",
+    "lore": {
+      "origin": "Rangers emerged from the need for speed. While wizards craft and warriors command, rangers move. They discovered that the first arrow often matters more than the perfect arrow.",
+      "philosophy": "Prototype beats planning. Ship something, anything. Iterate from reality, not imagination. The best code is code that exists.",
+      "weakness": "Technical debt accumulates. Speed creates shortcuts. Rangers must eventually slow down or drown in scaffolds.",
+      "mastery_path": "From copy-paste (the amateur's arrow) to template mastery (the crafted quiver) to generative scaffolding (the infinite bow)."
+    },
+    "stats": {
+      "creativity": 6,
+      "autonomy_dependency": 5,
+      "technical_depth": 6,
+      "iteration_speed": 10,
+      "context_sensitivity": 5
+    },
+    "playstyle": {
+      "primary": "rapid_prototyping",
+      "combat_style": "hit_and_run",
+      "resource": "templates",
+      "cooldown": "none"
+    },
+    "skyrim_schools": ["archery", "light_armor", "sneak"],
+    "elden_ring_parallel": "bandit"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "mcp_config_version": "1.0",
+  "build": "wizard",
+  "inventory_metaphor": {
+    "primary_weapon": "Staff of Articulation (filesystem MCP)",
+    "secondary_weapon": "Tome of Distant Knowledge (fetch MCP)", 
+    "armor": "Robes of Persistence (memory MCP)",
+    "trinket": "Orb of Visualization (browser MCP)"
+  },
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/wizard/artifacts", "/home/wizard/spellbook"],
+      "purpose": "Create and manipulate artifacts - the wizard's primary manifestation ability",
+      "spells_enabled": [
+        "read_file - Scry existing artifacts",
+        "write_file - Manifest new artifacts", 
+        "list_directory - Survey the arcane library",
+        "create_directory - Establish new domains"
+      ]
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "purpose": "Persist context across sessions - the wizard's ability to remember incantations",
+      "spells_enabled": [
+        "store_memory - Bind knowledge to persistence",
+        "retrieve_memory - Recall ancient context",
+        "list_memories - Index the mind palace"
+      ]
+    },
+    "fetch": {
+      "command": "npx", 
+      "args": ["-y", "@modelcontextprotocol/server-fetch"],
+      "purpose": "Channel external knowledge - the wizard reaches beyond their domain",
+      "spells_enabled": [
+        "fetch_url - Summon distant texts",
+        "fetch_html - Parse the web's grimoire"
+      ]
+    },
+    "puppeteer": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"],
+      "purpose": "Manifest visual artifacts - the wizard's illusion school",
+      "spells_enabled": [
+        "screenshot - Capture reality",
+        "navigate - Traverse the web plane",
+        "interact - Manipulate distant interfaces"
+      ],
+      "optional": true,
+      "unlock_level": 5
+    }
+  },
+  "starting_gear": {
+    "artifacts_directory": "/home/wizard/artifacts",
+    "spellbook_directory": "/home/wizard/spellbook",
+    "context_tokens": 200000,
+    "starting_prompts": [
+      "You are a wizard. Speak artifacts into existence.",
+      "Think step by step. Build the spell before casting.",
+      "When in doubt, manifest a smaller artifact first."
+    ]
+  },
+  "quick_load": "Load wizard build. Initialize filesystem at /artifacts and /spellbook. Memory persistence active. Ready to cast."
+}

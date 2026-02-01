@@ -1,0 +1,121 @@
+{
+  "dojo": {
+    "name": "The Cathedral",
+    "build": "paladin",
+    "description": "Training in the arts of planning, documentation, and coordination.",
+    "entry_ritual": "Before you lay a single stone, you must see the cathedral complete in your mind."
+  },
+  "skill_tree": {
+    "tier_1_acolyte": {
+      "name": "Acolyte",
+      "skills": [
+        {
+          "id": "basic_documentation",
+          "name": "The First Scroll",
+          "description": "Write clear, useful documentation",
+          "training": "Practice: Document an existing system so someone new could understand it.",
+          "mastery_check": "Can others understand your docs without asking questions?"
+        },
+        {
+          "id": "requirement_gathering",
+          "name": "The Interview",
+          "description": "Extract requirements from stakeholders",
+          "training": "Practice: Turn a vague request into specific, actionable requirements.",
+          "mastery_check": "Can you clarify ambiguity systematically?"
+        }
+      ],
+      "unlock_requirement": null
+    },
+    "tier_2_knight": {
+      "name": "Knight",
+      "skills": [
+        {
+          "id": "spec_writing",
+          "name": "The Charter",
+          "description": "Write specifications that guide implementation",
+          "training": "Practice: Write a spec, have someone implement it, measure gap.",
+          "mastery_check": "Do your specs reduce implementation ambiguity?"
+        },
+        {
+          "id": "diagram_mastery",
+          "name": "The Blueprint",
+          "description": "Communicate systems through visual architecture",
+          "training": "Practice: Diagram a complex system using appropriate notation.",
+          "mastery_check": "Can you explain a system in one diagram?"
+        },
+        {
+          "id": "decision_records",
+          "name": "The Chronicle",
+          "description": "Document decisions and their rationale",
+          "training": "Practice: Write ADRs for past architectural decisions.",
+          "mastery_check": "Could future devs understand why you chose X over Y?"
+        }
+      ],
+      "unlock_requirement": "tier_1_complete"
+    },
+    "tier_3_commander": {
+      "name": "Commander",
+      "skills": [
+        {
+          "id": "project_planning",
+          "name": "Campaign Planning",
+          "description": "Break large initiatives into manageable phases",
+          "training": "Practice: Plan a 3-month project with milestones and dependencies.",
+          "mastery_check": "Can you see the path from here to shipped?"
+        },
+        {
+          "id": "stakeholder_alignment",
+          "name": "The Council",
+          "description": "Align diverse stakeholders on direction",
+          "training": "Practice: Get engineering, design, and product to agree on scope.",
+          "mastery_check": "Can you build consensus efficiently?"
+        },
+        {
+          "id": "risk_assessment",
+          "name": "Scout's Report",
+          "description": "Identify and mitigate project risks early",
+          "training": "Practice: Enumerate risks for a project and propose mitigations.",
+          "mastery_check": "Do you find risks before they find you?"
+        }
+      ],
+      "unlock_requirement": "tier_2_complete"
+    },
+    "tier_4_architect": {
+      "name": "Grand Architect",
+      "skills": [
+        {
+          "id": "system_design",
+          "name": "The Cathedral Vision",
+          "description": "Design systems that scale and evolve",
+          "training": "Practice: Design a system to handle 100x current load.",
+          "mastery_check": "Can you see years ahead in system evolution?"
+        },
+        {
+          "id": "strategic_communication",
+          "name": "The Proclamation",
+          "description": "Communicate vision across the organization",
+          "training": "Practice: Write a technical strategy doc that aligns multiple teams.",
+          "mastery_check": "Do your documents drive organizational change?"
+        }
+      ],
+      "unlock_requirement": "tier_3_complete"
+    }
+  },
+  "training_quests": [
+    {
+      "id": "first_spec",
+      "name": "The Founding Document",
+      "description": "Write your first complete specification",
+      "objective": "Create a spec that could be handed to a developer",
+      "reward": "Unlocks specification confidence"
+    },
+    {
+      "id": "architecture_diagram",
+      "name": "The Grand Design",
+      "description": "Diagram a complex system",
+      "objective": "Create a system diagram that communicates architecture clearly",
+      "reward": "Unlocks visual communication"
+    }
+  ],
+  "quick_load": "Load paladin dojo. What documents do I need to write? What decisions need recording? Show me the planning skill tree."
+}

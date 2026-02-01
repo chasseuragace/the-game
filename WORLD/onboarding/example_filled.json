@@ -1,0 +1,192 @@
+{
+  "onboarding_instance": {
+    "timestamp": "2026-01-13",
+    "scenario": "IDE agent completed address card implementation without game context"
+  },
+
+  "phase_1_state_capture": {
+    "agent_identity": {
+      "ide_name": "unknown_ai_ide",
+      "session_type": "autonomous_implementation"
+    },
+    "last_action_summary": {
+      "commit_hash": "6307f957e",
+      "branch": "home-plate-enhance",
+      "files_changed": 22,
+      "insertions": 11883,
+      "action_type": "implement"
+    },
+    "work_product": {
+      "what_was_built": "Complete API integration for editable address card with clean architecture",
+      "components_created": [
+        "AddressCardRemoteDataSource - API calls to /qr-plates/{businessId}",
+        "EditableAddressCardPage - UI with form and preview",
+        "AddressCardNotifier - State management",
+        "Named route integration - Routes.kEditAddressCard"
+      ],
+      "architecture_patterns": [
+        "Clean Architecture (domain → data → presentation)",
+        "Repository Pattern",
+        "Provider/Notifier state management",
+        "DI container registration"
+      ],
+      "features_implemented": [
+        "GET/PUT endpoints integration",
+        "Auto-prefixing house numbers (EN/NP)",
+        "Real-time card preview",
+        "Nepali number conversion",
+        "PDF download with timestamp",
+        "Error handling with CustomFailure"
+      ]
+    },
+    "deferred_items": {
+      "needs_testing": [
+        "API integration validation on app run",
+        "Auth token presence verification",
+        "Role-based access control (owner/superadmin)"
+      ],
+      "known_risks": [
+        "Missing business auth token",
+        "Insufficient user role",
+        "Endpoint availability at /qr-plates/{businessId}"
+      ],
+      "assumptions_made": [
+        "API endpoint exists and follows expected schema",
+        "DioException handling covers all error cases",
+        "Business object passed correctly via navigation"
+      ]
+    }
+  },
+
+  "phase_2_workspace_comprehension": {
+    "identity": {
+      "what_is_this_project": "QR-based business management app",
+      "what_problem_does_it_solve": "Digital business cards and QR code management for businesses",
+      "who_is_it_for": "Business owners in Nepal (bilingual EN/NP support)"
+    },
+    "architecture": {
+      "tech_stack": "Flutter with Clean Architecture",
+      "patterns": ["Repository pattern", "Provider state management", "DI container"],
+      "where_does_this_fit": "Feature module within larger business profile management"
+    },
+    "state": {
+      "last_thing_done": "Complete feature implementation committed",
+      "currently_incomplete": "Not yet tested with real API",
+      "immediate_next_step": "Run app, test API integration, verify auth flow"
+    },
+    "context": {
+      "external_dependencies": ["Backend API at /qr-plates/{businessId}", "Auth system for tokens"],
+      "constraints": ["Must support owner/superadmin roles", "Bilingual support required"]
+    }
+  },
+
+  "phase_3_game_mapping": {
+    "build_detection": {
+      "approach": "ASK the agent, don't assume",
+      "why": "Output (11,883 lines) doesn't reveal process. Agent knows if it was conversational (Wizard), autonomous (Warrior), rapid (Ranger), planned (Paladin), or CLI-heavy (Rogue).",
+      "detected_build": "{{awaiting_agent_self_report}}",
+      "my_guess_from_outside": "warrior",
+      "but_could_be": ["wizard_long_spell", "ranger_deep_scaffold", "paladin_planned_execution"],
+      "confidence": "low_until_agent_confirms"
+    },
+    "map_detection": {
+      "map_type": "local",
+      "map_subtype": "ide",
+      "reasoning": "Working in local development environment via AI IDE"
+    },
+    "location": {
+      "id": "qr-business-home-plate-enhance",
+      "name": "Address Card Enhancement Feature",
+      "project": {
+        "name": "qr-business-app",
+        "path": "[local_path]",
+        "branch": "home-plate-enhance"
+      },
+      "state": {
+        "last_action": "Committed complete address card editing feature with API integration",
+        "current_objective": "Validate implementation with real API",
+        "blockers": [
+          "Unknown: API endpoint availability",
+          "Unknown: Auth token configuration",
+          "Unknown: User role setup for testing"
+        ],
+        "next_steps": [
+          "Run app in development mode",
+          "Navigate to address card edit feature",
+          "Test API GET/PUT operations",
+          "Verify error handling paths"
+        ]
+      }
+    }
+  },
+
+  "phase_4_agent_briefing": {
+    "context_injection": "You are now operating within 'The Game No One Has Completed'. This framework models developer-AI interaction as an RPG.",
+    "build_assignment": {
+      "build": "{{awaiting_agent_self_report}}",
+      "note": "We don't assign a build - we ask the agent to self-identify based on how it operated, not what it produced",
+      "question_to_agent": "Which build were you running? Think about your PROCESS, not your OUTPUT."
+    },
+    "location_briefing": {
+      "location_id": "qr-business-home-plate-enhance",
+      "last_action": "11,883 lines of address card feature implementation",
+      "current_state": "Committed, awaiting validation and build identification"
+    },
+    "rules_reminder": [
+      "Quests are individual tasks - you completed a quest (implement address card)",
+      "The Game is undefined - we don't know what winning looks like",
+      "Checkpoint before major changes - you did commit",
+      "Validate autonomous work before continuing",
+      "Your build is yours to identify - only you know how you operated"
+    ]
+  },
+
+  "phase_5_continuation_protocol": {
+    "recommended_path": "validate_first",
+    "reasoning": {
+      "why_validate": [
+        "11,883 insertions is substantial - needs review",
+        "API integration untested with real backend",
+        "Auth and role assumptions unverified",
+        "No human review of architecture decisions yet"
+      ]
+    },
+    "validation_checklist": [
+      {
+        "item": "Run the app",
+        "purpose": "Verify compilation and basic functionality",
+        "how": "flutter run"
+      },
+      {
+        "item": "Navigate to feature",
+        "purpose": "Verify routing works",
+        "how": "Go to Business Profile → Edit Address Card"
+      },
+      {
+        "item": "Test GET operation",
+        "purpose": "Verify API fetch works",
+        "how": "Load the edit page, check if data populates"
+      },
+      {
+        "item": "Test PUT operation",
+        "purpose": "Verify API save works",
+        "how": "Make a change, save, verify persistence"
+      },
+      {
+        "item": "Test error paths",
+        "purpose": "Verify error handling",
+        "how": "Test with invalid token, wrong role, network off"
+      }
+    ],
+    "after_validation": {
+      "if_passing": "Continue to next feature or merge branch",
+      "if_failing": "Debug specific failure, agent assists in fix",
+      "if_partial": "Prioritize critical failures, defer minor issues"
+    }
+  },
+
+  "conversation_starter": {
+    "to_paste_into_ide": "You just completed the address card implementation (commit 6307f957e, 22 files, 11,883 insertions). I'm onboarding you into my framework. Before we continue, I need to understand HOW you operated - not just WHAT you produced. Which build were you running: Wizard (conversational generation), Warrior (autonomous mission), Ranger (rapid scaffolding), Paladin (planned architecture), or Rogue (CLI operations)? Walk me through your process.",
+    "expected_response_type": "Agent should self-identify its build based on its process, then summarize implementation and propose next steps"
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "dojo": {
+    "name": "The Arcanum",
+    "build": "wizard",
+    "description": "Training grounds for prompt architects. Master the art of speaking reality into existence.",
+    "entry_ritual": "Before you cast, you must understand the nature of language as incantation."
+  },
+  "skill_tree": {
+    "tier_1_initiate": {
+      "name": "Apprentice Caster",
+      "skills": [
+        {
+          "id": "basic_prompt",
+          "name": "Basic Incantation",
+          "description": "Single-turn prompts with clear intent",
+          "training": "Practice: Ask Claude to create a simple function. Observe how clarity affects output.",
+          "mastery_check": "Can you consistently get the exact output you envision?"
+        },
+        {
+          "id": "artifact_manifestation",
+          "name": "Artifact Manifestation",
+          "description": "Create files through conversation",
+          "training": "Practice: Generate a complete HTML page with specific styling through description alone.",
+          "mastery_check": "Can you manifest multi-file projects without touching an IDE?"
+        }
+      ],
+      "unlock_requirement": null
+    },
+    "tier_2_adept": {
+      "name": "Journeyman Weaver",
+      "skills": [
+        {
+          "id": "chain_casting",
+          "name": "Chain Casting",
+          "description": "Multi-turn reasoning chains that build upon each other",
+          "training": "Practice: Build a complex system through iterative refinement over 5+ turns.",
+          "mastery_check": "Can you maintain coherent context across extended conversations?"
+        },
+        {
+          "id": "context_management",
+          "name": "Mana Conservation",
+          "description": "Efficient use of context window",
+          "training": "Practice: Summarize, compress, and reload context without losing essential information.",
+          "mastery_check": "Can you work on large projects without hitting context limits?"
+        },
+        {
+          "id": "few_shot_enchantment",
+          "name": "Few-Shot Enchantment",
+          "description": "Teaching by example within prompts",
+          "training": "Practice: Show Claude 2-3 examples and have it generalize the pattern.",
+          "mastery_check": "Can you teach new formats and styles through demonstration?"
+        }
+      ],
+      "unlock_requirement": "tier_1_complete"
+    },
+    "tier_3_master": {
+      "name": "Archmage",
+      "skills": [
+        {
+          "id": "system_prompt_mastery",
+          "name": "Reality Anchoring",
+          "description": "Crafting system prompts that define persistent behavior",
+          "training": "Practice: Create a system prompt that maintains persona across any user input.",
+          "mastery_check": "Can you define realities that persist?"
+        },
+        {
+          "id": "meta_prompting",
+          "name": "Meta-Incantation",
+          "description": "Prompts that generate prompts",
+          "training": "Practice: Have Claude design its own optimal prompt for a given task.",
+          "mastery_check": "Can you bootstrap prompt generation?"
+        },
+        {
+          "id": "claude_in_claude",
+          "name": "Recursive Summoning",
+          "description": "Using the Anthropic API within artifacts",
+          "training": "Practice: Create an artifact that calls Claude to process user input.",
+          "mastery_check": "Can you build AI-powered artifacts?"
+        }
+      ],
+      "unlock_requirement": "tier_2_complete"
+    },
+    "tier_4_transcendent": {
+      "name": "Reality Weaver",
+      "skills": [
+        {
+          "id": "full_application_synthesis",
+          "name": "World Manifestation",
+          "description": "Generate complete applications through pure description",
+          "training": "Practice: Describe a full-stack application and have it materialize.",
+          "mastery_check": "Can you speak entire systems into existence?"
+        },
+        {
+          "id": "emergent_behavior_channeling",
+          "name": "Emergent Channeling",
+          "description": "Leveraging unexpected model capabilities",
+          "training": "Practice: Discover and reliably reproduce novel model behaviors.",
+          "mastery_check": "Can you find and harness emergent capabilities?"
+        }
+      ],
+      "unlock_requirement": "tier_3_complete",
+      "warning": "Beyond here, the distinction between wizard and spell blurs."
+    }
+  },
+  "training_quests": [
+    {
+      "id": "first_artifact",
+      "name": "The First Manifestation",
+      "description": "Create your first artifact through conversation alone",
+      "objective": "Generate a working React component without writing any code directly",
+      "reward": "Unlocks artifact creation confidence"
+    },
+    {
+      "id": "context_marathon",
+      "name": "The Long Conversation",
+      "description": "Maintain a productive 50+ message conversation",
+      "objective": "Build something complex over an extended session without losing coherence",
+      "reward": "Unlocks context management intuition"
+    },
+    {
+      "id": "prompt_library",
+      "name": "The Spellbook",
+      "description": "Curate 10 reusable prompts for common tasks",
+      "objective": "Build your personal grimoire of incantations",
+      "reward": "Unlocks rapid casting ability"
+    }
+  ],
+  "quick_load": "Load wizard dojo. Show me the skill tree. What tier am I on? What's my next training quest?"
+}

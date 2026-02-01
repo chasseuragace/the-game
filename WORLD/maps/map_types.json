@@ -1,0 +1,96 @@
+{
+  "maps": {
+    "concept": "Maps are the environments where you deploy your build. Like in battle royale—where do you drop?",
+    "types": {
+      "local": {
+        "description": "Your machine. Your terminal. Your IDE. Full control, no latency.",
+        "characteristics": {
+          "latency": "zero",
+          "persistence": "filesystem",
+          "control": "total",
+          "isolation": "limited"
+        },
+        "subtypes": [
+          {
+            "id": "local_terminal",
+            "name": "The Terminal",
+            "description": "Pure command line environment",
+            "best_for": ["rogue", "warrior"],
+            "entry_point": "open terminal"
+          },
+          {
+            "id": "local_ide",
+            "name": "The Forge (IDE)",
+            "description": "Integrated development environment",
+            "best_for": ["ranger", "paladin"],
+            "entry_point": "open vscode/cursor/etc"
+          },
+          {
+            "id": "local_browser",
+            "name": "The Portal (Browser)",
+            "description": "Claude.ai web interface",
+            "best_for": ["wizard"],
+            "entry_point": "claude.ai"
+          },
+          {
+            "id": "local_container",
+            "name": "The Shadow Realm (Container)",
+            "description": "Isolated local environment",
+            "best_for": ["rogue", "warrior"],
+            "entry_point": "docker run"
+          }
+        ]
+      },
+      "remote": {
+        "description": "Cloud environments. CI/CD. Production. Beyond your machine.",
+        "characteristics": {
+          "latency": "variable",
+          "persistence": "cloud",
+          "control": "delegated",
+          "isolation": "high"
+        },
+        "subtypes": [
+          {
+            "id": "remote_vps",
+            "name": "The Outpost (VPS)",
+            "description": "Virtual private server you control",
+            "best_for": ["rogue"],
+            "entry_point": "ssh user@host"
+          },
+          {
+            "id": "remote_cicd",
+            "name": "The Assembly Line (CI/CD)",
+            "description": "Automated build and deploy",
+            "best_for": ["warrior", "ranger"],
+            "entry_point": "github actions / gitlab ci"
+          },
+          {
+            "id": "remote_cloud",
+            "name": "The Cloud Kingdom",
+            "description": "AWS/GCP/Azure managed services",
+            "best_for": ["rogue", "warrior"],
+            "entry_point": "cloud console / cli"
+          },
+          {
+            "id": "remote_production",
+            "name": "The Live Arena",
+            "description": "Production environment - real stakes",
+            "best_for": ["all builds"],
+            "entry_point": "varies",
+            "warning": "No respawns. Actions have consequences."
+          }
+        ]
+      }
+    }
+  },
+  "map_selection_criteria": {
+    "questions": [
+      "What build am I running?",
+      "What level of control do I need?",
+      "What are the stakes (dev/staging/prod)?",
+      "How much isolation do I want?",
+      "Am I working alone or coordinating?"
+    ]
+  },
+  "quick_load": "Show me the maps. Where should I drop for [build]? What's the safest entry point?"
+}

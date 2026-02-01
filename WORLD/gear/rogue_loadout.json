@@ -1,0 +1,95 @@
+{
+  "mcp_config_version": "1.0",
+  "build": "rogue",
+  "inventory_metaphor": {
+    "primary_weapon": "Daggers of Shell Commands (shell MCP)",
+    "secondary_weapon": "Lockpicks of SSH (ssh MCP)",
+    "armor": "Cloak of Containers (docker MCP)",
+    "trinket": "Poison Vials of Automation (cron/systemd)",
+    "mount": "Shadow Network (kubernetes MCP)"
+  },
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/"],
+      "purpose": "Full filesystem access - the rogue sees all",
+      "abilities_enabled": [
+        "read_file - Read any file",
+        "write_file - Modify anything",
+        "list_directory - Survey the system",
+        "search_files - Find hidden treasures"
+      ],
+      "warning": "Root access is a double-edged dagger"
+    },
+    "shell": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-shell"],
+      "purpose": "Direct command execution - the rogue's primary weapon",
+      "abilities_enabled": [
+        "execute_command - Strike from the shadows",
+        "pipe_commands - Chain attacks",
+        "background_process - Plant traps",
+        "environment_vars - Control the terrain"
+      ]
+    },
+    "ssh": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/server-ssh"],
+      "purpose": "Remote system access - extend your reach",
+      "abilities_enabled": [
+        "connect - Infiltrate remote systems",
+        "execute_remote - Strike from anywhere",
+        "tunnel - Create hidden passages",
+        "scp - Extract/plant files"
+      ],
+      "optional": true,
+      "unlock_level": 3
+    },
+    "docker": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-docker"],
+      "purpose": "Container manipulation - isolated strike zones",
+      "abilities_enabled": [
+        "run_container - Deploy shadow agents",
+        "exec_container - Infiltrate running systems",
+        "build_image - Craft custom tools",
+        "network - Control the shadows"
+      ]
+    },
+    "kubernetes": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/server-kubernetes"],
+      "purpose": "Orchestration mastery - command the cloud",
+      "abilities_enabled": [
+        "kubectl - Full cluster control",
+        "helm - Deploy packages",
+        "logs - Surveillance",
+        "exec - Remote infiltration"
+      ],
+      "optional": true,
+      "unlock_level": 7
+    }
+  },
+  "starting_gear": {
+    "home_directory": "/home/rogue",
+    "shell": "zsh",
+    "essential_tools": [
+      "grep", "awk", "sed", "find", "xargs",
+      "jq", "curl", "wget", "nc",
+      "tmux", "vim", "fzf"
+    ],
+    "dotfiles": {
+      "bashrc": "Aliases and functions",
+      "zshrc": "Power user shell config",
+      "vimrc": "Editor from the shadows",
+      "tmux.conf": "Terminal multiplexing"
+    },
+    "starting_wisdom": [
+      "man is your friend",
+      "| is the most powerful operator",
+      "Everything is a file",
+      "When in doubt, grep it out"
+    ]
+  },
+  "quick_load": "Load rogue build. Shell access active. What system are we infiltrating? What needs to be automated?"
+}

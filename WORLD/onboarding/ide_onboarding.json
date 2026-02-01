@@ -1,0 +1,245 @@
+{
+  "onboarding_protocol": {
+    "version": "1.0.0",
+    "name": "IDE Agent Onboarding",
+    "purpose": "Bring an AI IDE agent into the game framework with shared context",
+    "trigger": "When resuming work after an IDE agent has acted without game context"
+  },
+
+  "phase_1_state_capture": {
+    "description": "Extract what the agent did without game context",
+    "template": {
+      "agent_identity": {
+        "ide_name": "{{cursor|windsurf|copilot|other}}",
+        "session_id": "{{optional}}",
+        "last_active": "{{timestamp}}"
+      },
+      "last_action_summary": {
+        "commit_hash": "{{if applicable}}",
+        "branch": "{{branch_name}}",
+        "files_changed": "{{count}}",
+        "insertions": "{{count}}",
+        "deletions": "{{count}}",
+        "action_type": "{{implement|refactor|fix|research|scaffold}}"
+      },
+      "work_product": {
+        "what_was_built": "{{description}}",
+        "architecture_patterns": ["{{patterns used}}"],
+        "dependencies_added": ["{{new deps}}"],
+        "files_created": ["{{key files}}"],
+        "files_modified": ["{{key files}}"]
+      },
+      "deferred_items": {
+        "needs_testing": ["{{items}}"],
+        "known_risks": ["{{potential issues}}"],
+        "assumptions_made": ["{{assumptions}}"]
+      }
+    },
+    "extraction_prompt": "Based on the agent's last message, fill in the state capture template."
+  },
+
+  "phase_2_workspace_comprehension": {
+    "description": "Understand the workspace before proceeding",
+    "questions": {
+      "identity": [
+        "What is this project?",
+        "What problem does it solve?",
+        "Who is it for?"
+      ],
+      "architecture": [
+        "What is the tech stack?",
+        "What architectural patterns are in use?",
+        "Where does the code I'm looking at fit in the larger system?"
+      ],
+      "state": [
+        "What was the last thing done here?",
+        "What is currently broken or incomplete?",
+        "What is the immediate next step?"
+      ],
+      "context": [
+        "What do I need to know that isn't in the code?",
+        "Are there external dependencies (APIs, services, teams)?",
+        "What are the constraints (time, resources, requirements)?"
+      ],
+      "history": [
+        "How did we get here?",
+        "What decisions were made and why?",
+        "What was tried and didn't work?"
+      ]
+    },
+    "comprehension_prompt": "Answer these questions to build shared understanding of the workspace."
+  },
+
+  "phase_3_game_mapping": {
+    "description": "Map the current situation to the game framework",
+    "mapping_template": {
+      "build_detection": {
+        "question": "Ask the agent: Which build were you running?",
+        "philosophy": "The agent knows its own process better than we can infer from output. Don't assume - ask.",
+        "self_assessment_prompts": {
+          "wizard": "Were you generating through conversation, iterating on prompts, manifesting through description?",
+          "warrior": "Did you receive a mission and execute autonomously without checking in?",
+          "ranger": "Were you scaffolding rapidly, prioritizing speed, using templates?",
+          "paladin": "Did you plan/document first, think architecturally before coding?",
+          "rogue": "Were you chaining CLI commands, working in shell, infrastructure-focused?"
+        },
+        "output_does_not_equal_process": "11k lines could be any build - Wizard's long spell, Warrior's mission, Ranger's deep scaffold, Paladin's planned implementation",
+        "detected_build": "{{agent_self_reported}}",
+        "confidence": "{{agent determines}}"
+      },
+      "map_detection": {
+        "question": "What map are we on?",
+        "detected_map_type": "{{local|remote}}",
+        "detected_map_subtype": "{{terminal|ide|browser|container|vps|cicd|cloud|production}}"
+      },
+      "location_creation": {
+        "question": "Define the location for this workspace",
+        "location": {
+          "id": "{{project-feature-branch}}",
+          "name": "{{human readable}}",
+          "project": {
+            "name": "{{project_name}}",
+            "path": "{{filesystem_path}}",
+            "repo": "{{git_remote}}",
+            "branch": "{{current_branch}}"
+          },
+          "state": {
+            "last_action": "{{from phase_1}}",
+            "current_objective": "{{what are we trying to accomplish}}",
+            "blockers": ["{{from deferred_items}}"],
+            "next_steps": ["{{immediate actions}}"]
+          }
+        }
+      }
+    }
+  },
+
+  "phase_4_agent_briefing": {
+    "description": "Brief the agent on the game framework",
+    "briefing_template": {
+      "context_injection": "You are now operating within a cognitive framework called 'The Game No One Has Completed'. This framework models developer-AI interaction as an RPG.",
+      "build_assignment": "You are running the {{build_name}} build. Your core mechanic is {{core_mechanic}}. Your playstyle is {{playstyle}}.",
+      "current_location": "You are at location: {{location_id}}. Last action: {{last_action}}. Current objective: {{current_objective}}.",
+      "available_actions": [
+        "Continue from last action",
+        "Review and validate what was done",
+        "Respec to a different build",
+        "Save current state and switch context"
+      ],
+      "game_rules": [
+        "Quests are individual tasks with clear completion",
+        "The Game is the meta-question of human-AI work relationship",
+        "No one has completed the game yet",
+        "You are completing quests within an undefined larger game"
+      ]
+    }
+  },
+
+  "phase_5_continuation_protocol": {
+    "description": "Decide how to proceed",
+    "decision_tree": {
+      "validate_first": {
+        "condition": "Agent made significant changes without oversight",
+        "action": "Review changes before continuing",
+        "questions": [
+          "Does the implementation match the requirement?",
+          "Are there any obvious issues?",
+          "Do the tests pass?",
+          "Is the code structured correctly?"
+        ]
+      },
+      "continue_forward": {
+        "condition": "Work is validated and ready to proceed",
+        "action": "Pick up next item from deferred_items or next_steps",
+        "questions": [
+          "What is the single most important next action?",
+          "What build should handle this action?",
+          "What could go wrong?"
+        ]
+      },
+      "pivot": {
+        "condition": "Current direction needs reassessment",
+        "action": "Step back and re-evaluate",
+        "questions": [
+          "Is this the right approach?",
+          "Should we be solving a different problem?",
+          "Do we need more information before continuing?"
+        ]
+      },
+      "save_and_exit": {
+        "condition": "Good stopping point reached",
+        "action": "Checkpoint state for next session",
+        "questions": [
+          "What would someone need to know to resume?",
+          "What is the current state of completion?",
+          "What should happen next?"
+        ]
+      }
+    }
+  },
+
+  "quick_load": "Onboard IDE agent. Run phases 1-5. What build is it running? What location are we at? What happens next?",
+
+  "example_filled": {
+    "note": "Example based on the user's scenario",
+    "phase_1_state_capture": {
+      "agent_identity": {
+        "ide_name": "cursor_or_windsurf",
+        "last_active": "2026-01-13"
+      },
+      "last_action_summary": {
+        "commit_hash": "6307f957e",
+        "branch": "home-plate-enhance",
+        "files_changed": 22,
+        "insertions": 11883,
+        "deletions": 0,
+        "action_type": "implement"
+      },
+      "work_product": {
+        "what_was_built": "API integration for address card editing with clean architecture",
+        "architecture_patterns": ["clean_architecture", "repository_pattern", "state_management_notifier"],
+        "dependencies_added": ["dio_exception_handling", "pdf_generation"],
+        "files_created": ["8 domain/data layer files", "EditableAddressCardPage", "AddressCardNotifier"],
+        "files_modified": ["app_router.dart", "business_profile_view.dart", "di.dart"]
+      },
+      "deferred_items": {
+        "needs_testing": ["API integration validation", "auth token presence", "role-based access control"],
+        "known_risks": ["missing business auth token", "insufficient user role"],
+        "assumptions_made": ["owner/superadmin role required", "endpoint exists at /qr-plates/{businessId}"]
+      }
+    },
+    "phase_3_game_mapping": {
+      "build_detection": {
+        "detected_build": "warrior",
+        "confidence": "high",
+        "reasoning": "Autonomous multi-step implementation, 22 files changed, complete feature delivery without supervision"
+      },
+      "map_detection": {
+        "detected_map_type": "local",
+        "detected_map_subtype": "ide"
+      },
+      "location_creation": {
+        "id": "qr-business-home-plate-enhance",
+        "name": "QR Business Address Card Enhancement",
+        "project": {
+          "name": "qr-business-app",
+          "branch": "home-plate-enhance"
+        },
+        "state": {
+          "last_action": "Implemented complete API integration with clean architecture for address card editing",
+          "current_objective": "Validate implementation and test API integration",
+          "blockers": ["Need to test auth token handling", "Need to verify role-based access"],
+          "next_steps": ["Run app and test API integration", "Verify auth token presence", "Test with owner/superadmin role"]
+        }
+      }
+    },
+    "phase_4_agent_briefing": {
+      "briefing": "You are running the WARRIOR build. Your core mechanic is delegation and oversight. You just completed an autonomous implementation session with 11,883 insertions across 22 files. Current location: qr-business-home-plate-enhance. Next action: validate what was built before continuing."
+    },
+    "phase_5_continuation_protocol": {
+      "recommended_path": "validate_first",
+      "reasoning": "Significant autonomous changes require review before continuing",
+      "immediate_action": "Run the app and test the API integration"
+    }
+  }
+}

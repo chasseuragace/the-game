@@ -1,0 +1,136 @@
+{
+  "dojo": {
+    "name": "The Command Center",
+    "build": "warrior",
+    "description": "Training grounds for agentic commanders. Learn to delegate, trust, and oversee.",
+    "entry_ritual": "A warrior who does everything themselves is not a commander—they are a soldier."
+  },
+  "skill_tree": {
+    "tier_1_recruit": {
+      "name": "Recruit",
+      "skills": [
+        {
+          "id": "first_command",
+          "name": "First Command",
+          "description": "Execute a single shell command through Claude",
+          "training": "Practice: Have Claude run 'ls -la' and explain the output.",
+          "mastery_check": "Can you delegate simple commands confidently?"
+        },
+        {
+          "id": "checkpoint_discipline",
+          "name": "Checkpoint Discipline",
+          "description": "Always git commit before changes",
+          "training": "Practice: Develop the habit of checkpointing before any modification.",
+          "mastery_check": "Is checkpointing automatic behavior?"
+        }
+      ],
+      "unlock_requirement": null
+    },
+    "tier_2_soldier": {
+      "name": "Soldier",
+      "skills": [
+        {
+          "id": "multi_step_operations",
+          "name": "Battle Sequences",
+          "description": "Allow Claude to execute multiple commands in sequence",
+          "training": "Practice: Have Claude clone a repo, install deps, run tests—without interruption.",
+          "mastery_check": "Can you trust a 5-step operation?"
+        },
+        {
+          "id": "error_recovery",
+          "name": "Tactical Retreat",
+          "description": "Use /rewind and git checkout to recover from failures",
+          "training": "Practice: Intentionally let something fail, then recover.",
+          "mastery_check": "Do you panic at errors or calmly restore?"
+        },
+        {
+          "id": "scope_definition",
+          "name": "Mission Briefing",
+          "description": "Define clear objectives and boundaries for tasks",
+          "training": "Practice: Write task definitions that are specific enough to succeed but loose enough to allow agent creativity.",
+          "mastery_check": "Can you brief an agent effectively?"
+        }
+      ],
+      "unlock_requirement": "tier_1_complete"
+    },
+    "tier_3_captain": {
+      "name": "Captain",
+      "skills": [
+        {
+          "id": "unsupervised_tasks",
+          "name": "Fire and Forget",
+          "description": "Start tasks and return to completed work",
+          "training": "Practice: Give Claude a refactoring task, do something else, return to review.",
+          "mastery_check": "Can you walk away from a running agent?"
+        },
+        {
+          "id": "pr_workflow",
+          "name": "Review Protocol",
+          "description": "Let agents create PRs, review asynchronously",
+          "training": "Practice: Have Claude create a PR, review it like a human teammate.",
+          "mastery_check": "Is your review process efficient?"
+        },
+        {
+          "id": "context_handoff",
+          "name": "Shift Change",
+          "description": "Hand context between sessions cleanly",
+          "training": "Practice: End a session, return next day, resume without losing context.",
+          "mastery_check": "Can you maintain continuity across sessions?"
+        }
+      ],
+      "unlock_requirement": "tier_2_complete"
+    },
+    "tier_4_general": {
+      "name": "General",
+      "skills": [
+        {
+          "id": "multi_agent_orchestration",
+          "name": "Army Command",
+          "description": "Coordinate multiple agents on different tasks",
+          "training": "Practice: Run parallel agents—one on frontend, one on backend.",
+          "mastery_check": "Can you orchestrate concurrent operations?"
+        },
+        {
+          "id": "overnight_operations",
+          "name": "Night Watch",
+          "description": "7+ hour autonomous sessions",
+          "training": "Practice: Start a major refactor before bed, review in morning.",
+          "mastery_check": "Can you sleep while agents work?"
+        },
+        {
+          "id": "strategic_planning",
+          "name": "Campaign Planning",
+          "description": "Design multi-day autonomous workflows",
+          "training": "Practice: Plan a week-long migration with daily agent objectives.",
+          "mastery_check": "Can you think in campaign timescales?"
+        }
+      ],
+      "unlock_requirement": "tier_3_complete",
+      "warning": "At this level, you are no longer coding. You are commanding."
+    }
+  },
+  "training_quests": [
+    {
+      "id": "first_delegation",
+      "name": "The First Order",
+      "description": "Successfully delegate and complete a task without manual coding",
+      "objective": "Have Claude implement a feature from description to working code",
+      "reward": "Unlocks trust in delegation"
+    },
+    {
+      "id": "recovery_drill",
+      "name": "The Failed Battle",
+      "description": "Intentionally create a mess, then recover",
+      "objective": "Let Claude break something, then restore via checkpoint",
+      "reward": "Unlocks confidence in recovery"
+    },
+    {
+      "id": "overnight_mission",
+      "name": "The Night Watch",
+      "description": "Run your first overnight autonomous session",
+      "objective": "Start a 4+ hour autonomous task and review results later",
+      "reward": "Unlocks extended autonomy"
+    }
+  ],
+  "quick_load": "Load warrior dojo. Show me the skill tree. What's my trust level? What's my next training quest?"
+}

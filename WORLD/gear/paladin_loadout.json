@@ -1,0 +1,100 @@
+{
+  "mcp_config_version": "1.0",
+  "build": "paladin",
+  "inventory_metaphor": {
+    "primary_weapon": "Mace of Documentation (filesystem MCP)",
+    "secondary_weapon": "Shield of Version History (git MCP)",
+    "armor": "Plate of Project Management (linear/notion MCP)",
+    "trinket": "Amulet of Communication (slack MCP)",
+    "tome": "Sacred Texts of Architecture (google-drive MCP)"
+  },
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/paladin/specs", "/home/paladin/architecture"],
+      "purpose": "Document creation and management",
+      "abilities_enabled": [
+        "write_file - Inscribe specifications",
+        "read_file - Review existing docs",
+        "list_directory - Survey documentation landscape"
+      ]
+    },
+    "git": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-git"],
+      "purpose": "Version control for documentation",
+      "abilities_enabled": [
+        "git_commit - Record spec versions",
+        "git_log - Track decision history",
+        "git_diff - See what changed in plans"
+      ]
+    },
+    "linear": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/server-linear"],
+      "env": {
+        "LINEAR_API_KEY": "${LINEAR_API_KEY}"
+      },
+      "purpose": "Project and issue tracking",
+      "abilities_enabled": [
+        "create_issue - Define tasks",
+        "update_issue - Track progress",
+        "list_issues - Survey the battlefield",
+        "create_project - Establish campaigns"
+      ],
+      "note": "Alternative: notion, jira, asana MCPs"
+    },
+    "slack": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/server-slack"],
+      "env": {
+        "SLACK_TOKEN": "${SLACK_TOKEN}"
+      },
+      "purpose": "Team coordination and communication",
+      "abilities_enabled": [
+        "send_message - Coordinate troops",
+        "read_channel - Monitor communications",
+        "search_messages - Find past decisions"
+      ],
+      "optional": true
+    },
+    "google-drive": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/server-gdrive"],
+      "purpose": "Shared documentation repository",
+      "abilities_enabled": [
+        "create_doc - Write shared specs",
+        "read_doc - Review team documents",
+        "list_files - Survey the archive"
+      ],
+      "optional": true
+    },
+    "mermaid": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/server-mermaid"],
+      "purpose": "Architecture diagrams",
+      "abilities_enabled": [
+        "render_diagram - Visualize systems",
+        "flowchart - Map processes",
+        "sequence_diagram - Document interactions"
+      ],
+      "note": "May use artifact generation instead"
+    }
+  },
+  "starting_gear": {
+    "specs_directory": "/home/paladin/specs",
+    "architecture_directory": "/home/paladin/architecture",
+    "document_templates": [
+      "PRD (Product Requirements Document)",
+      "TDD (Technical Design Document)",
+      "ADR (Architecture Decision Record)",
+      "RFC (Request for Comments)"
+    ],
+    "starting_principles": [
+      "Document decisions, not just outcomes",
+      "A diagram is worth a thousand meetings",
+      "Specs should answer 'why' not just 'what'"
+    ]
+  },
+  "quick_load": "Load paladin build. Initialize specs and architecture directories. What are we planning? Show me the document templates."
+}

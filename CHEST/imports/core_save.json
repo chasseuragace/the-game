@@ -1,0 +1,72 @@
+{
+  "save_metadata": {
+    "version": "0.2.0",
+    "timestamp": "2026-01-13T20:45:00Z",
+    "save_name": "the_game_no_one_has_completed",
+    "schema_version": "cognitive_directory_v1"
+  },
+
+  "world_state": {
+    "era": "post_assistant_pre_agent",
+    "current_patch": "claude_4.5",
+    "marketing_lore": {
+      "tagline": "Keep Thinking",
+      "hero_copy": "Impossible? Possible.",
+      "subtitle": "Your AI thinking partner",
+      "tension": "partner_vs_autonomous_agent"
+    },
+    "reality_check": {
+      "users_say": "65% augmentative",
+      "actual_usage": "49% automation",
+      "stigma_hiding_usage": "69%",
+      "anxiety_about_future": "55%",
+      "source": "anthropic_interviewer_dec_2025"
+    }
+  },
+
+  "game_theory": {
+    "quests": {
+      "description": "Individual tasks with clear completion states",
+      "examples": [
+        "debug_this_code",
+        "generate_a_report",
+        "draft_an_email",
+        "refactor_this_function"
+      ],
+      "status": "completable"
+    },
+    "the_game": {
+      "description": "The meta-question of human-AI work relationship",
+      "open_questions": [
+        "what_does_it_mean_to_be_a_developer_when_ai_codes_autonomously",
+        "what_is_professional_identity_when_49_percent_automated",
+        "where_does_this_progression_lead",
+        "what_are_the_victory_conditions"
+      ],
+      "status": "undefined",
+      "endgame": null,
+      "final_boss": "unknown",
+      "has_anyone_completed": false
+    }
+  },
+
+  "directory_structure": {
+    "builds": "Character classes with MCP configs and skill trees",
+    "maps": "Environments (local/remote) where you deploy",
+    "locations": "Specific project contexts within maps",
+    "mindstates": "Philosophical frameworks and placeholders",
+    "quick_loads": "Commands to rapidly load context"
+  },
+
+  "available_builds": ["wizard", "warrior", "ranger", "paladin", "rogue"],
+  
+  "quick_reference": {
+    "wizard": "Prompt Architect - reality through language",
+    "warrior": "Agentic Commander - delegation and oversight",
+    "ranger": "Scaffolder - strike fast, iterate faster",
+    "paladin": "PM/Architect - plan before build",
+    "rogue": "CLI Master - terminal mastery"
+  },
+
+  "quick_load": "Load core save. Show me the builds. Where do I start?"
+}

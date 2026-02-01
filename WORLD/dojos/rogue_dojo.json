@@ -1,0 +1,136 @@
+{
+  "dojo": {
+    "name": "The Shadow Terminal",
+    "build": "rogue",
+    "description": "Training in the arts of the command line. Master the terminal, master the system.",
+    "entry_ritual": "Close the GUI. Open the terminal. Now you see the truth."
+  },
+  "skill_tree": {
+    "tier_1_pickpocket": {
+      "name": "Pickpocket",
+      "skills": [
+        {
+          "id": "basic_navigation",
+          "name": "Shadow Walking",
+          "description": "Navigate the filesystem fluently",
+          "training": "Practice: cd, ls, pwd, cat, less without thinking.",
+          "mastery_check": "Can you navigate blind?"
+        },
+        {
+          "id": "file_manipulation",
+          "name": "Sleight of Hand",
+          "description": "Move, copy, delete, rename with precision",
+          "training": "Practice: mv, cp, rm, mkdir, touch fluently.",
+          "mastery_check": "Is file manipulation second nature?"
+        }
+      ],
+      "unlock_requirement": null
+    },
+    "tier_2_cutpurse": {
+      "name": "Cutpurse",
+      "skills": [
+        {
+          "id": "grep_mastery",
+          "name": "Find the Mark",
+          "description": "Search text with grep, awk, sed",
+          "training": "Practice: Find specific patterns in large files.",
+          "mastery_check": "Can you grep anything?"
+        },
+        {
+          "id": "piping",
+          "name": "Chain Attacks",
+          "description": "Connect commands with pipes",
+          "training": "Practice: Build complex pipelines that transform data.",
+          "mastery_check": "Do you think in pipes?"
+        },
+        {
+          "id": "permissions",
+          "name": "Lockpicking",
+          "description": "Understand and manipulate permissions",
+          "training": "Practice: chmod, chown, understand umask.",
+          "mastery_check": "Do permissions make sense?"
+        }
+      ],
+      "unlock_requirement": "tier_1_complete"
+    },
+    "tier_3_assassin": {
+      "name": "Assassin",
+      "skills": [
+        {
+          "id": "shell_scripting",
+          "name": "Poison Crafting",
+          "description": "Write shell scripts for automation",
+          "training": "Practice: Automate a repetitive task with a script.",
+          "mastery_check": "Can you script anything?"
+        },
+        {
+          "id": "process_management",
+          "name": "Crowd Control",
+          "description": "Manage processes, jobs, signals",
+          "training": "Practice: ps, kill, bg, fg, jobs, nohup, &.",
+          "mastery_check": "Can you control any process?"
+        },
+        {
+          "id": "remote_access",
+          "name": "Shadow Step",
+          "description": "SSH, SCP, tunneling",
+          "training": "Practice: Access remote systems, transfer files, create tunnels.",
+          "mastery_check": "Is remote as easy as local?"
+        }
+      ],
+      "unlock_requirement": "tier_2_complete"
+    },
+    "tier_4_shadow_master": {
+      "name": "Shadow Master",
+      "skills": [
+        {
+          "id": "container_mastery",
+          "name": "Shadow Clone",
+          "description": "Docker mastery - run, build, compose",
+          "training": "Practice: Containerize an application, manage containers.",
+          "mastery_check": "Are containers your domain?"
+        },
+        {
+          "id": "infrastructure_as_code",
+          "name": "Reality Warping",
+          "description": "Terraform, Ansible, declarative infrastructure",
+          "training": "Practice: Define infrastructure in code, apply changes.",
+          "mastery_check": "Can you summon infrastructure from code?"
+        },
+        {
+          "id": "kubernetes",
+          "name": "Cloud Walking",
+          "description": "Orchestrate containers at scale",
+          "training": "Practice: Deploy, scale, manage applications on k8s.",
+          "mastery_check": "Is the cloud your playground?"
+        }
+      ],
+      "unlock_requirement": "tier_3_complete",
+      "warning": "At this level, you control the infrastructure itself."
+    }
+  },
+  "training_quests": [
+    {
+      "id": "one_liner_challenge",
+      "name": "The One-Liner",
+      "description": "Solve a complex problem in a single pipeline",
+      "objective": "Process, transform, and output data in one command",
+      "reward": "Unlocks pipeline thinking"
+    },
+    {
+      "id": "automation_script",
+      "name": "The Automation",
+      "description": "Script something you do repeatedly",
+      "objective": "Create a script that saves you time every day",
+      "reward": "Unlocks automation mindset"
+    },
+    {
+      "id": "container_deployment",
+      "name": "The Shadow Clone",
+      "description": "Containerize and deploy an application",
+      "objective": "Take an app from code to running container",
+      "reward": "Unlocks container mastery"
+    }
+  ],
+  "quick_load": "Load rogue dojo. I'm in the terminal. What commands do I need to master? What should I automate?"
+}

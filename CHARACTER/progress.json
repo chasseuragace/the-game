@@ -1,0 +1,39 @@
+{
+  "wizard": {
+    "tier": 1,
+    "tier_name": "Apprentice Caster",
+    "skills_mastered": [],
+    "quests_completed": []
+  },
+  "warrior": {
+    "tier": 1,
+    "tier_name": "Recruit",
+    "trust_level": "supervised",
+    "skills_mastered": [],
+    "quests_completed": []
+  },
+  "ranger": {
+    "tier": 1,
+    "tier_name": "Scout",
+    "skills_mastered": [],
+    "quests_completed": []
+  },
+  "paladin": {
+    "tier": 1,
+    "tier_name": "Acolyte",
+    "skills_mastered": [],
+    "quests_completed": []
+  },
+  "rogue": {
+    "tier": 1,
+    "tier_name": "Pickpocket",
+    "skills_mastered": [],
+    "quests_completed": []
+  },
+  "meta": {
+    "total_sessions": 0,
+    "total_quests_completed": 0,
+    "achievements": [],
+    "favorite_build": null
+  }
+}

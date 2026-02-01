@@ -1,0 +1,107 @@
+{
+  "dojo": {
+    "name": "The Proving Grounds",
+    "build": "ranger",
+    "description": "Training for speed. Learn to ship fast, iterate faster.",
+    "entry_ritual": "Perfection is the enemy of shipped."
+  },
+  "skill_tree": {
+    "tier_1_scout": {
+      "name": "Scout",
+      "skills": [
+        {
+          "id": "template_awareness",
+          "name": "Know Your Quiver",
+          "description": "Know what starters and templates exist",
+          "training": "Practice: List 10 project starters you could use right now.",
+          "mastery_check": "Can you name the right starter for any project type?"
+        },
+        {
+          "id": "five_minute_prototype",
+          "name": "Quick Shot",
+          "description": "Get something running in under 5 minutes",
+          "training": "Practice: From zero to running dev server in 5 minutes.",
+          "mastery_check": "Is this automatic?"
+        }
+      ],
+      "unlock_requirement": null
+    },
+    "tier_2_hunter": {
+      "name": "Hunter",
+      "skills": [
+        {
+          "id": "boilerplate_customization",
+          "name": "Arrow Crafting",
+          "description": "Modify templates to fit needs quickly",
+          "training": "Practice: Take a starter and customize it in under 15 minutes.",
+          "mastery_check": "Can you adapt templates without slowing down?"
+        },
+        {
+          "id": "rapid_iteration",
+          "name": "Volley Fire",
+          "description": "Multiple attempts in quick succession",
+          "training": "Practice: Try 3 different approaches in 30 minutes.",
+          "mastery_check": "Do you iterate or deliberate?"
+        }
+      ],
+      "unlock_requirement": "tier_1_complete"
+    },
+    "tier_3_tracker": {
+      "name": "Tracker",
+      "skills": [
+        {
+          "id": "personal_template_library",
+          "name": "Custom Quiver",
+          "description": "Build your own reusable templates",
+          "training": "Practice: Create 5 personal templates for common projects.",
+          "mastery_check": "Do you have templates for your most common tasks?"
+        },
+        {
+          "id": "doc_speed_reading",
+          "name": "Trail Signs",
+          "description": "Quickly extract what you need from documentation",
+          "training": "Practice: Get a new library working from docs in 10 minutes.",
+          "mastery_check": "Can you navigate unfamiliar docs efficiently?"
+        }
+      ],
+      "unlock_requirement": "tier_2_complete"
+    },
+    "tier_4_pathfinder": {
+      "name": "Pathfinder",
+      "skills": [
+        {
+          "id": "generative_scaffolding",
+          "name": "Infinite Quiver",
+          "description": "Generate custom templates on demand",
+          "training": "Practice: Have Claude generate a perfect starter for a unique use case.",
+          "mastery_check": "Can you create templates as fast as you need them?"
+        },
+        {
+          "id": "prototype_to_production",
+          "name": "Arrow to Spear",
+          "description": "Know when and how to evolve prototypes",
+          "training": "Practice: Take a quick prototype and identify the path to production.",
+          "mastery_check": "Do you know when to stop ranging and start building?"
+        }
+      ],
+      "unlock_requirement": "tier_3_complete"
+    }
+  },
+  "training_quests": [
+    {
+      "id": "speed_run",
+      "name": "The Speed Run",
+      "description": "Prototype 3 different project types in one hour",
+      "objective": "Prove you can scaffold anything quickly",
+      "reward": "Unlocks rapid deployment confidence"
+    },
+    {
+      "id": "template_forge",
+      "name": "The Forge",
+      "description": "Create your first personal template",
+      "objective": "Build a reusable starter for your common projects",
+      "reward": "Unlocks custom quiver"
+    }
+  ],
+  "quick_load": "Load ranger dojo. What's my scaffold speed? What templates do I have? Ready to prototype."
+}

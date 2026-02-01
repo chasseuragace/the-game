@@ -1,0 +1,30 @@
+{
+  "build": {
+    "id": "paladin",
+    "name": "The Paladin",
+    "alias": "PM / Architect",
+    "tagline": "Plan the cathedral before laying stones",
+    "lore": {
+      "origin": "Paladins arose from the chaos of undirected development. They saw teams building without blueprints, coding without specs. They chose the path of planning—the sacred duty of architecture.",
+      "philosophy": "Think before you build. Document before you code. The best debugging is code that was designed correctly. Communication is the ultimate tool.",
+      "weakness": "Analysis paralysis. Paladins can plan forever and ship never. Their documents can become prisons rather than guides.",
+      "mastery_path": "From note-taking (the squire's scroll) to specification writing (the knight's charter) to system design (the architect's vision) to strategic coordination (the general's campaign)."
+    },
+    "stats": {
+      "creativity": 7,
+      "autonomy_dependency": 3,
+      "technical_depth": 7,
+      "iteration_speed": 4,
+      "context_sensitivity": 9,
+      "coordination": 10
+    },
+    "playstyle": {
+      "primary": "strategic_planning",
+      "combat_style": "formation_tactics",
+      "resource": "clarity",
+      "cooldown": "consensus_building"
+    },
+    "skyrim_schools": ["speech", "restoration", "enchanting"],
+    "elden_ring_parallel": "confessor"
+  }
+}

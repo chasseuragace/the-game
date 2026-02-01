@@ -1,0 +1,109 @@
+{
+  "mcp_config_version": "1.0",
+  "build": "warrior",
+  "inventory_metaphor": {
+    "primary_weapon": "Uchigatana of Execution (shell MCP)",
+    "secondary_weapon": "Shield of Version Control (git MCP)",
+    "armor": "Plate of Continuous Integration (github MCP)",
+    "trinket": "Amulet of Containerization (docker MCP)",
+    "mount": "Autonomous Steed (claude-code agent mode)"
+  },
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/warrior/battleground"],
+      "purpose": "Full battlefield access - read, write, modify any file in the domain",
+      "abilities_enabled": [
+        "read_file - Scout enemy code",
+        "write_file - Deploy changes",
+        "list_directory - Survey the terrain",
+        "move_file - Reposition assets"
+      ]
+    },
+    "git": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-git"],
+      "purpose": "Version control - the warrior's ability to checkpoint and rewind",
+      "abilities_enabled": [
+        "git_status - Assess current position",
+        "git_commit - Save checkpoint",
+        "git_diff - See what changed",
+        "git_log - Review battle history",
+        "git_checkout - Tactical retreat to previous position"
+      ],
+      "critical": "This is your /rewind command. Never fight without checkpoints."
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      },
+      "purpose": "Remote coordination - deploy to the cloud battlefield",
+      "abilities_enabled": [
+        "create_pull_request - Request reinforcements review",
+        "list_issues - See open battles",
+        "create_issue - Mark new objectives",
+        "get_file_contents - Scout remote repositories"
+      ]
+    },
+    "shell": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-shell"],
+      "purpose": "Direct command execution - the warrior's striking arm",
+      "abilities_enabled": [
+        "execute_command - Strike",
+        "run_script - Execute battle plans",
+        "background_process - Deploy autonomous units"
+      ],
+      "warning": "With great power comes great responsibility. Commands execute immediately."
+    },
+    "docker": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-docker"],
+      "purpose": "Container warfare - isolated battle arenas",
+      "abilities_enabled": [
+        "list_containers - Survey deployed units",
+        "run_container - Deploy new unit",
+        "stop_container - Recall unit",
+        "logs - Battle reports"
+      ],
+      "optional": true,
+      "unlock_level": 5
+    }
+  },
+  "starting_gear": {
+    "battleground_directory": "/home/warrior/battleground",
+    "checkpoint_strategy": "commit_before_major_changes",
+    "trust_level": "supervised",
+    "autonomy_hours_unlocked": 0,
+    "starting_commands": [
+      "Always git status before engaging",
+      "Commit early, commit often",
+      "When in doubt, checkpoint and test"
+    ]
+  },
+  "trust_progression": {
+    "level_1_supervised": {
+      "description": "Watch every command execute",
+      "autonomy_window": "single_command",
+      "review": "immediate"
+    },
+    "level_2_trusted": {
+      "description": "Allow multi-step operations",
+      "autonomy_window": "task_completion",
+      "review": "on_completion"
+    },
+    "level_3_autonomous": {
+      "description": "Fire and forget",
+      "autonomy_window": "hours",
+      "review": "async_pr_review"
+    },
+    "level_4_commander": {
+      "description": "Orchestrate multiple agents",
+      "autonomy_window": "project_scope",
+      "review": "strategic_checkpoints"
+    }
+  },
+  "quick_load": "Load warrior build. Initialize git in /battleground. Shell access armed. Current trust level: supervised. Ready to command."
+}

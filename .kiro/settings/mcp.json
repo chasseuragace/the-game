@@ -1,0 +1,127 @@
+{
+  "mcpServers": {
+    "piper-tts": {
+      "command": "dart",
+      "args": [
+        "/Volumes/shared_code/skyrim/piper/piper_mcp_server.dart"
+      ]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ],
+      "autoApprove": [
+        "browser_click",
+        "browser_type",
+        "browser_navigate",
+        "browser_wait_for",
+        "browser_evaluate",
+        "browser_take_screenshot",
+        "browser_console_messages",
+        "browser_snapshot",
+        "browser_run_code",
+        "browser_handle_dialog",
+        "browser_select_option",
+        "browser_press_key",
+        "browser_fill_form",
+        "browser_resize",
+        "browser_network_requests",
+        "browser_close"
+      ],
+      "disabled": true
+    },
+    "postgres": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "DATABASE_URI",
+        "crystaldba/postgres-mcp",
+        "--access-mode=unrestricted"
+      ],
+      "env": {
+        "DATABASE_URI": "postgresql://postgres:postgres@host.docker.internal:5431/app_db"
+      },
+      "disabled": true,
+      "autoApprove": [
+        "query",
+        "execute",
+        "list_tables",
+        "describe_table",
+        "get_table_schema",
+        "list_objects",
+        "get_object_details",
+        "execute_sql",
+        "list_schemas"
+      ]
+    },
+    "postgres_dev_server": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "DATABASE_URI",
+        "crystaldba/postgres-mcp",
+        "--access-mode=unrestricted"
+      ],
+      "env": {
+        "DATABASE_URI": "postgresql://postgres:postgres@localhost:5435/app_db"
+      },
+      "disabled": true,
+      "autoApprove": [
+        "list_schemas"
+      ]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Volumes",
+        "/Users/ajaydahal"
+      ],
+      "autoApprove": [
+        "read_text_file",
+        "write_file",
+        "edit_file",
+        "list_directory",
+        "search_files",
+        "read_multiple_files",
+        "directory_tree",
+        "list_allowed_directories"
+      ],
+      "disabled": true
+    },
+    "cartographer": {
+      "name": "Cartographer",
+      "description": "Codebase API analysis and mapping. Find endpoints, trace calls, analyze impact.",
+      "command": "bash",
+      "args": [
+        "-c",
+        "cd /Volumes/shared_code/code_shared/api-tracer-project && npm run mcp"
+      ],
+      "disabled": true,
+      "autoApprove": [
+        "find_endpoint",
+        "find_project",
+        "trace_call_chain",
+        "find_relationships",
+        "find_similar",
+        "impact_analysis",
+        "unused_endpoints",
+        "get_stats",
+        "get_graph",
+        "scan_workspace",
+        "get_health"
+      ],
+      "disabledTools": [
+        "find_project"
+      ]
+    }
+  }
+}

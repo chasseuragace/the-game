@@ -1,0 +1,116 @@
+{
+  "quick_load_commands": {
+    "meta": "These are the commands you can paste to quickly load context into a new session.",
+    
+    "core_commands": {
+      "load_full_mindstate": {
+        "command": "Load my game save. The game no one has completed.",
+        "description": "Loads the entire framework and philosophy",
+        "context_required": "core_save.json"
+      },
+      "resume_session": {
+        "command": "I'm loading my save file. Remind me: what build am I running and what quest was I on?",
+        "description": "Resume from where you left off"
+      },
+      "existential_checkpoint": {
+        "command": "Am I completing quests or playing the game? What's the difference right now?",
+        "description": "Step back and assess the meta-level"
+      }
+    },
+
+    "build_commands": {
+      "wizard": {
+        "load": "Load wizard build. Initialize filesystem at /artifacts and /spellbook. Ready to cast.",
+        "dojo": "Load wizard dojo. Show me the skill tree. What tier am I on?",
+        "quick_cast": "I'm a wizard. What artifact shall I manifest?"
+      },
+      "warrior": {
+        "load": "Load warrior build. Initialize git. Shell access armed. Ready to command.",
+        "dojo": "Load warrior dojo. What's my trust level? What autonomous task should I try?",
+        "quick_deploy": "I'm a warrior. What needs to be delegated?"
+      },
+      "ranger": {
+        "load": "Load ranger build. Ready to scaffold. What are we building?",
+        "dojo": "Load ranger dojo. What's my scaffold speed? What templates do I have?",
+        "quick_prototype": "I'm a ranger. I need a prototype in 5 minutes. Go."
+      },
+      "paladin": {
+        "load": "Load paladin build. Specs and architecture ready. What are we planning?",
+        "dojo": "Load paladin dojo. What documents need writing? What decisions need recording?",
+        "quick_plan": "I'm a paladin. What needs to be designed before built?"
+      },
+      "rogue": {
+        "load": "Load rogue build. Shell active. What system needs mastering?",
+        "dojo": "Load rogue dojo. What commands should I learn? What needs automation?",
+        "quick_strike": "I'm a rogue. What's the one-liner for this?"
+      },
+      "trajectory": {
+        "identify": "What trajectory did this session follow? Start build → trigger → execution build?",
+        "common_patterns": "Show me common build trajectories. Which one matches this session?",
+        "transition_check": "Did the build transition mid-session? What triggered it? Was it appropriate?"
+      }
+    },
+
+    "navigation_commands": {
+      "check_builds": "Show me all the builds. Help me choose one.",
+      "respec": "I want to respec. Show me the builds based on what I'm actually trying to accomplish.",
+      "map_selection": "Show me the maps. Where should I drop?",
+      "location_management": "What locations do I have saved? Where was I working?"
+    },
+
+    "world_state_commands": {
+      "patch_notes": "What patch are we on? What new capabilities dropped?",
+      "tension_check": "What's the current tension between marketing and reality?",
+      "endgame_status": "Has anyone discovered the endgame yet?"
+    },
+
+    "future_mindstates": {
+      "races": {
+        "placeholder": "Load races mindstate. We're designing character races.",
+        "status": "NOT_YET_IMPLEMENTED",
+        "note": "Race determines base attributes and starting conditions - to be developed"
+      },
+      "skill_tree_visual": {
+        "placeholder": "Visualize the skill tree for [build].",
+        "status": "NOT_YET_IMPLEMENTED",
+        "note": "Generate visual diagram of skill progression"
+      }
+    },
+
+    "onboarding_commands": {
+      "full_onboarding": {
+        "command": "Onboard IDE agent. Run phases 1-5. Ask it what build it was running. Create location. Decide continuation.",
+        "description": "Full 5-phase onboarding protocol for an IDE agent"
+      },
+      "quick_onboarding": {
+        "command": "You just completed work. Before continuing: Which build were you running (Wizard/Warrior/Ranger/Paladin/Rogue)? Think about your PROCESS, not your OUTPUT. What did you do, what needs testing, what's next?",
+        "description": "Abbreviated onboarding - let agent self-identify"
+      },
+      "build_inquiry": {
+        "command": "Which build were you running? Wizard (conversational), Warrior (autonomous), Ranger (scaffolding), Paladin (planning), Rogue (CLI)? Walk me through your process.",
+        "description": "Pure build self-identification"
+      },
+      "state_capture": {
+        "command": "Capture current state: commit hash, branch, files changed, what was built, what needs testing, known risks, and how you approached it (process, not just output).",
+        "description": "Extract state including process insight"
+      },
+      "validate_then_continue": {
+        "command": "Validation checkpoint. Show me the key files, walk me through decisions, what could break?",
+        "description": "Review before continuing after autonomous work"
+      }
+    }
+  },
+
+  "usage": {
+    "new_session": [
+      "1. Paste the relevant JSON files into context",
+      "2. Use a quick_load command to set the mode",
+      "3. Proceed with your session"
+    ],
+    "resuming": [
+      "1. Load your last save (location + build)",
+      "2. Use 'resume_session' command",
+      "3. Claude will help you pick up where you left off"
+    ]
+  }
+}

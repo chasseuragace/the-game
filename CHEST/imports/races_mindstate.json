@@ -1,0 +1,54 @@
+{
+  "status": "NOT_YET_IMPLEMENTED",
+  "placeholder": true,
+  
+  "concept": {
+    "description": "Races determine starting conditions and base attributes. Unlike builds (which are chosen playstyles), races are contextual backgrounds that affect how you approach the game.",
+    "analogy": "In Skyrim, your race gives you starting bonuses. In Elden Ring, your starting class affects early game but not late game potential."
+  },
+
+  "potential_races": {
+    "note": "These are brainstorm ideas, not finalized",
+    "ideas": [
+      {
+        "name": "Startup Founder",
+        "description": "Speed over perfection, limited resources, high stakes",
+        "bonuses": ["velocity", "resourcefulness"],
+        "penalties": ["technical_debt_tolerance", "documentation"]
+      },
+      {
+        "name": "Enterprise Developer",
+        "description": "Process-heavy, well-resourced, risk-averse",
+        "bonuses": ["documentation", "coordination"],
+        "penalties": ["velocity", "autonomy"]
+      },
+      {
+        "name": "Solo Indie",
+        "description": "Full autonomy, limited bandwidth, personal vision",
+        "bonuses": ["autonomy", "creativity"],
+        "penalties": ["scale", "support"]
+      },
+      {
+        "name": "Open Source Maintainer",
+        "description": "Community-driven, public accountability, volunteer time",
+        "bonuses": ["community", "documentation"],
+        "penalties": ["velocity", "focus"]
+      },
+      {
+        "name": "Student/Learner",
+        "description": "Learning-focused, time-rich, knowledge-poor",
+        "bonuses": ["learning_speed", "time"],
+        "penalties": ["experience", "resources"]
+      }
+    ]
+  },
+
+  "design_questions": [
+    "How do races interact with builds?",
+    "Should races affect MCP configs?",
+    "Are races permanent or can you change?",
+    "How do races affect progression?"
+  ],
+
+  "quick_load": "Load races mindstate. We're designing character races. What dimensions matter?"
+}

@@ -1,0 +1,77 @@
+{
+  "mcp_config_version": "1.0",
+  "build": "ranger",
+  "inventory_metaphor": {
+    "primary_weapon": "Bow of Quick Generation (filesystem MCP)",
+    "secondary_weapon": "Quiver of Templates (git MCP for cloning)",
+    "armor": "Leather of Minimal Config (package managers)",
+    "trinket": "Scout's Lens (fetch MCP for docs)"
+  },
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/ranger/projects", "/home/ranger/templates"],
+      "purpose": "Rapid file creation - shoot scaffolds into existence",
+      "abilities_enabled": [
+        "write_file - Fire arrows (create files fast)",
+        "read_file - Scout existing code",
+        "list_directory - Survey project structure",
+        "create_directory - Establish new project grounds"
+      ]
+    },
+    "git": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-git"],
+      "purpose": "Clone templates, version quick iterations",
+      "abilities_enabled": [
+        "git_clone - Grab template repos",
+        "git_init - Quick project setup",
+        "git_commit - Checkpoint iterations"
+      ]
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"],
+      "purpose": "Grab docs and examples fast",
+      "abilities_enabled": [
+        "fetch_url - Pull documentation",
+        "fetch_html - Scrape examples"
+      ]
+    },
+    "npm": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/server-npm"],
+      "purpose": "Package management at speed",
+      "abilities_enabled": [
+        "npm_init - Bootstrap projects",
+        "npm_install - Add dependencies",
+        "npm_search - Find packages"
+      ],
+      "note": "Hypothetical MCP - may use shell commands instead"
+    }
+  },
+  "starting_gear": {
+    "projects_directory": "/home/ranger/projects",
+    "templates_directory": "/home/ranger/templates",
+    "favorite_starters": [
+      "create-react-app",
+      "create-next-app",
+      "vite",
+      "express-generator"
+    ],
+    "starting_tactics": [
+      "Clone first, customize second",
+      "Working beats perfect",
+      "Commit often, branch rarely"
+    ]
+  },
+  "template_quiver": {
+    "react_arrow": "npx create-react-app",
+    "next_arrow": "npx create-next-app",
+    "vite_arrow": "npm create vite@latest",
+    "express_arrow": "npx express-generator",
+    "fastapi_arrow": "pip install fastapi uvicorn",
+    "custom_arrows": "Store in /templates for quick copying"
+  },
+  "quick_load": "Load ranger build. Ready to scaffold. What are we building? I'll have a prototype in 5 minutes."
+}

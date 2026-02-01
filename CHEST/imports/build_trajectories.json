@@ -1,0 +1,123 @@
+{
+  "mindstate": "build_trajectories",
+  "version": "0.1.0",
+  "discovery_source": "Agent self-assessment revealed builds are not discrete",
+
+  "core_insight": {
+    "old_model": "Builds are discrete character classes you pick at session start",
+    "new_model": "Builds are fluid - they blend and transition based on session dynamics",
+    "evidence": "Agent reported 40% Paladin → 60% Warrior with clear transition point"
+  },
+
+  "build_trajectory_concept": {
+    "definition": "The path through builds during a single session",
+    "components": {
+      "start_build": "How you begin (often Paladin or Ranger)",
+      "transition_triggers": "What causes a shift (discovery, obstacle, clarity)",
+      "execution_build": "How you finish (often Warrior or Wizard)",
+      "blend_ratio": "Percentage breakdown of build influence"
+    }
+  },
+
+  "common_trajectories": {
+    "paladin_to_warrior": {
+      "name": "The Planned Strike",
+      "pattern": "Design first → Execute autonomously",
+      "trigger": "Plan becomes clear enough to execute without check-ins",
+      "risk": "Autonomous decisions might diverge from user intent",
+      "example": "GPS/BLE integration - sketched architecture, then built straight through"
+    },
+    "ranger_to_wizard": {
+      "name": "The Discovery Path",
+      "pattern": "Scaffold fast → Refine conversationally",
+      "trigger": "Prototype reveals questions that need discussion",
+      "risk": "Early scaffold might need significant rework",
+      "example": "Quick prototype exposes design decisions, switch to dialogue"
+    },
+    "wizard_to_warrior": {
+      "name": "The Clarified Mission",
+      "pattern": "Discuss requirements → Execute autonomously",
+      "trigger": "Conversation reaches clarity, agent takes over",
+      "risk": "Might execute based on incomplete understanding",
+      "example": "Long requirements chat, then 'got it, building now'"
+    },
+    "warrior_to_paladin": {
+      "name": "The Obstacle Reflection",
+      "pattern": "Execute → Hit wall → Step back to design",
+      "trigger": "Autonomous execution reveals architectural problem",
+      "risk": "Sunk cost in wrong direction",
+      "example": "Building fast, realize the approach won't scale, stop to redesign"
+    },
+    "pure_builds": {
+      "note": "Some sessions stay in one build throughout",
+      "pure_wizard": "Long conversational refinement, never autonomous",
+      "pure_warrior": "Clear mission from start, execute without pause",
+      "pure_ranger": "Rapid iteration, never settles into execution",
+      "pure_paladin": "Planning session only, no implementation",
+      "pure_rogue": "CLI operations throughout"
+    }
+  },
+
+  "transition_triggers": {
+    "discovery": {
+      "description": "Finding something in the codebase that changes approach",
+      "example": "Found existing TourEntityDetailsModel → adapted plan"
+    },
+    "clarity": {
+      "description": "Requirements become clear enough to execute",
+      "example": "After discussion, agent says 'got it' and builds"
+    },
+    "obstacle": {
+      "description": "Hit a wall that requires rethinking",
+      "example": "Approach won't work, need to step back"
+    },
+    "completion": {
+      "description": "Phase complete, natural shift to next mode",
+      "example": "Design done → now execute"
+    },
+    "user_signal": {
+      "description": "User explicitly requests mode change",
+      "example": "'Stop planning, just build it'"
+    }
+  },
+
+  "tracking_trajectory": {
+    "questions_to_ask_agent": [
+      "How did you start this session?",
+      "Did your approach change mid-session?",
+      "What triggered the change?",
+      "What percentage would you assign to each build?"
+    ],
+    "questions_to_ask_self": [
+      "Did I want this trajectory?",
+      "Should I have intervened at the transition?",
+      "Is this trajectory appropriate for the stakes?"
+    ]
+  },
+
+  "trajectory_risk_profiles": {
+    "high_autonomy_trajectories": {
+      "patterns": ["paladin_to_warrior", "wizard_to_warrior"],
+      "risk": "Agent makes decisions without validation",
+      "mitigation": "Explicit check-in at transition point"
+    },
+    "high_iteration_trajectories": {
+      "patterns": ["ranger_to_wizard", "warrior_to_paladin"],
+      "risk": "Potential rework of early output",
+      "mitigation": "Set expectation that first output is exploratory"
+    },
+    "pure_autonomous": {
+      "patterns": ["pure_warrior"],
+      "risk": "Highest divergence potential",
+      "mitigation": "Clear mission brief, defined boundaries"
+    }
+  },
+
+  "framework_update": {
+    "builds_are": "fluid states, not fixed classes",
+    "sessions_have": "trajectories through build-space",
+    "onboarding_should_ask": "not just 'what build' but 'what trajectory'"
+  },
+
+  "quick_load": "Load build trajectories mindstate. How do builds blend? What trajectory did this session follow?"
+}

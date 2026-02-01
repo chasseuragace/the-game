@@ -1,0 +1,19 @@
+{
+  "_status": "not_loaded",
+  "_instructions": "Say 'load mindstate' and paste your JSON, or replace this file",
+  "identity": {
+    "role": null,
+    "domains": [],
+    "stance": null
+  },
+  "worldview": {
+    "foundational_postulates": [],
+    "cross_domain_analogies": []
+  },
+  "trajectory": {
+    "near_term": null,
+    "mid_term": null,
+    "long_term": null
+  },
+  "handoff_instruction": "When loaded, assume all context as given. Continue without re-explaining fundamentals."
+}

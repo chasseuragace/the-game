@@ -1,0 +1,33 @@
+{
+  "_comment": "All available gear, organized by build",
+  "wizard": {
+    "primary": { "name": "Staff of Articulation", "mcp": "filesystem" },
+    "secondary": { "name": "Tome of Distant Knowledge", "mcp": "fetch" },
+    "armor": { "name": "Robes of Persistence", "mcp": "memory" },
+    "trinket": { "name": "Orb of Visualization", "mcp": "puppeteer", "tier_required": 3 }
+  },
+  "warrior": {
+    "primary": { "name": "Uchigatana of Execution", "mcp": "shell" },
+    "secondary": { "name": "Shield of Version Control", "mcp": "git" },
+    "armor": { "name": "Plate of Continuous Integration", "mcp": "github" },
+    "trinket": { "name": "Amulet of Containerization", "mcp": "docker", "tier_required": 3 }
+  },
+  "ranger": {
+    "primary": { "name": "Bow of Quick Generation", "mcp": "filesystem" },
+    "secondary": { "name": "Quiver of Templates", "mcp": "git" },
+    "armor": { "name": "Leather of Minimal Config", "mcp": null },
+    "trinket": { "name": "Scout's Lens", "mcp": "fetch" }
+  },
+  "paladin": {
+    "primary": { "name": "Mace of Documentation", "mcp": "filesystem" },
+    "secondary": { "name": "Shield of Version History", "mcp": "git" },
+    "armor": { "name": "Plate of Project Management", "mcp": "linear" },
+    "trinket": { "name": "Amulet of Communication", "mcp": "slack" }
+  },
+  "rogue": {
+    "primary": { "name": "Daggers of Shell Commands", "mcp": "shell" },
+    "secondary": { "name": "Lockpicks of SSH", "mcp": "ssh", "tier_required": 3 },
+    "armor": { "name": "Cloak of Containers", "mcp": "docker" },
+    "trinket": { "name": "Shadow Network", "mcp": "kubernetes", "tier_required": 4 }
+  }
+}

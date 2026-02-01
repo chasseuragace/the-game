@@ -1,0 +1,30 @@
+{
+  "build": {
+    "id": "warrior",
+    "name": "The Warrior",
+    "alias": "Agentic Commander",
+    "tagline": "Delegation and oversight",
+    "lore": {
+      "origin": "Emerged when Claude Code unlocked autonomous execution. Warriors discovered that true power lies not in doing, but in commanding. They learned to trust the blade to swing itself.",
+      "philosophy": "Define the objective. Set the boundaries. Release the agent. Review the aftermath. Trust, but verify.",
+      "weakness": "Requires surrender of control. A warrior who cannot delegate is just a fighter. Over-specification kills autonomy; under-specification causes chaos.",
+      "mastery_path": "From supervised tasks (watching every stroke) to trusted delegation (sleep while code compiles) to strategic command (orchestrating agent armies)."
+    },
+    "stats": {
+      "creativity": 5,
+      "autonomy_dependency": 10,
+      "technical_depth": 8,
+      "iteration_speed": 6,
+      "context_sensitivity": 4,
+      "trust_required": 10
+    },
+    "playstyle": {
+      "primary": "delegative_trust_based",
+      "combat_style": "command_and_conquer",
+      "resource": "agent_cycles",
+      "cooldown": "review_cycles"
+    },
+    "skyrim_schools": ["conjuration_summoning", "destruction"],
+    "elden_ring_parallel": "samurai"
+  }
+}

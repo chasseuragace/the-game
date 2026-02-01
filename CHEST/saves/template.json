@@ -1,0 +1,54 @@
+{
+  "_comment": "AI Game Saves - Save File Format v2.0",
+  "_instructions": "Export from session, import to resume",
+  
+  "meta": {
+    "save_name": "",
+    "version": "2.0",
+    "created": "",
+    "last_updated": "",
+    "session_count": 0
+  },
+  
+  "player": {
+    "active_build": null,
+    "current_tier": null,
+    "trust_level": null,
+    "mindstate_loaded": false
+  },
+  
+  "context": {
+    "working_on": null,
+    "last_action": null,
+    "next_action": null,
+    "blockers": [],
+    "decisions_made": []
+  },
+  
+  "location": {
+    "map_type": null,
+    "map_subtype": null,
+    "project": null,
+    "branch": null
+  },
+  
+  "character": {
+    "mindstate": {},
+    "progress": {}
+  },
+  
+  "gear": {
+    "equipped": null,
+    "mcps_active": []
+  },
+  
+  "quest": {
+    "active_quest": null,
+    "quest_progress": null
+  },
+  
+  "handoff": {
+    "instruction": "Continue from this state. Do not re-explain fundamentals.",
+    "notes": null
+  }
+}
