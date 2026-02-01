@@ -9,6 +9,8 @@ readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly GAME_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 readonly BUILDS_DIR="$GAME_ROOT/WORLD/builds"
 readonly GEAR_DIR="$GAME_ROOT/WORLD/gear"
+readonly CONFIG_DIR="$GAME_ROOT/WORLD/config"
+readonly MCP_TEMPLATE="$CONFIG_DIR/mcp-template.json"
 readonly MCP_CONFIG="$GAME_ROOT/.kiro/settings/mcp.json"
 readonly CHARACTER_BUILD="$GAME_ROOT/CHARACTER/build.md"
 
@@ -124,23 +126,23 @@ sync_mcp_servers() {
 merge_mcp_config() {
   local new_servers="$1"
   
-  # Read existing config or create empty
-  local existing_config
-  if [ -f "$MCP_CONFIG" ]; then
-    existing_config=$(cat "$MCP_CONFIG")
+  # Start with template (includes voice MCP)
+  local base_config
+  if [ -f "$MCP_TEMPLATE" ]; then
+    base_config=$(cat "$MCP_TEMPLATE")
   else
-    existing_config='{"mcpServers": {}}'
+    die "MCP template not found: $MCP_TEMPLATE"
   fi
   
-  # Merge new servers into existing config
+  # Merge new servers into template
   local merged
-  merged=$(echo "$existing_config" | jq ".mcpServers += $new_servers")
+  merged=$(echo "$base_config" | jq ".mcpServers += $new_servers")
   
-  # Write back to config
+  # Write to workspace config
   mkdir -p "$(dirname "$MCP_CONFIG")"
   echo "$merged" | jq '.' > "$MCP_CONFIG"
   
-  log_success "MCP servers synced to workspace config"
+  log_success "MCP servers synced to workspace config (voice MCP always equipped)"
 }
 
 # ============================================================================
@@ -151,6 +153,7 @@ validate_environment() {
   command -v jq &> /dev/null || die "jq is required but not installed"
   [ -d "$BUILDS_DIR" ] || die "Builds directory not found: $BUILDS_DIR"
   [ -d "$GEAR_DIR" ] || die "Gear directory not found: $GEAR_DIR"
+  [ -f "$MCP_TEMPLATE" ] || die "MCP template not found: $MCP_TEMPLATE"
 }
 
 # ============================================================================

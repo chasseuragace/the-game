@@ -1,0 +1,71 @@
+{
+  "_comment": "MCP Template - Base configuration loaded for all builds. Voice is always equipped.",
+  "mcpServers": {
+    "piper-tts": {
+      "command": "dart",
+      "args": [
+        "/Volumes/shared_code/skyrim/piper/piper_mcp_server.dart"
+      ],
+      "purpose": "Voice MCP - The rogue always speaks",
+      "disabled": false,
+      "autoApprove": [
+        "speak"
+      ]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "."
+      ],
+      "purpose": "Filesystem access - Shadow Walking",
+      "autoApprove": [
+        "read_text_file",
+        "write_file",
+        "edit_file",
+        "list_directory",
+        "search_files",
+        "read_multiple_files",
+        "directory_tree"
+      ],
+      "disabled": false
+    },
+    "shell": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-shell"
+      ],
+      "purpose": "Shell commands - Daggers of Shell Commands",
+      "autoApprove": [
+        "execute_command"
+      ],
+      "disabled": false
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github@latest"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      },
+      "purpose": "GitHub API - Sigil of GitHub",
+      "autoApprove": [
+        "create_repo",
+        "list_repos",
+        "get_repo",
+        "push_code",
+        "create_issue",
+        "list_issues",
+        "get_issue",
+        "create_pull_request",
+        "list_pull_requests",
+        "get_pull_request"
+      ],
+      "disabled": false
+    }
+  }
+}
