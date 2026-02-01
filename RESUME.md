@@ -19,9 +19,9 @@
 
 ## CONTEXT
 
-**Working on:** The Repository Scout - COMPLETE & PUSHED  
-**Last action:** Remote added, main and feat/repository-scout pushed to GitHub  
-**Next action:** Merge feat/repository-scout to main or continue with next quest  
+**Working on:** Repository Scout - COMPLETE, REFACTORED & POSITIONED  
+**Last action:** Tool moved to WORLD/tools/rogue/, symlink created, manifest documented  
+**Next action:** Merge to main or continue with next quest  
 **Blockers:** None
 
 ---
@@ -39,9 +39,9 @@ Voice:     [ rogue ]          Context:  [ 100% ]
 
 ## RESUME POINT
 
-New game. The framework is loaded. Rogue build equipped. Repository Scout quest complete and pushed to remote.
+New game. The framework is loaded. Rogue build equipped. Repository Scout quest complete, refactored, positioned, and deployed.
 
-**Quest Complete & Deployed:**
+**Quest Complete & Evolved:**
 - ✅ Built repo-scout.sh CLI tool
 - ✅ Scan filesystem for git repos
 - ✅ List discovered repos with metadata
@@ -49,15 +49,20 @@ New game. The framework is loaded. Rogue build equipped. Repository Scout quest 
 - ✅ Show repo info and status
 - ✅ Skills unlocked: Shadow Walking, Sleight of Hand
 - ✅ Remote added: https://github.com/chasseuragace/the-game
-- ✅ Pushed to GitHub (main + feat/repository-scout)
+- ✅ Pushed to GitHub (main + feat/gh-cli-integration)
+- ✅ Code refactored for maintainability
+- ✅ GitHub MCP equipped as rogue artifact
+- ✅ Tool positioned in WORLD/tools/rogue/
+- ✅ Tools manifest created
+- ✅ Symlink created for active quest access
 
-**Remote Status:**
-- Origin: https://github.com/chasseuragace/the-game.git
-- Main branch: pushed ✅
-- Feature branch: feat/repository-scout pushed ✅
+**Tool Location:**
+- Primary: `WORLD/tools/rogue/repo-scout.sh`
+- Quick access: `./repo-scout` (symlink)
+- Documentation: `WORLD/tools/tools_manifest.md`
 
 **To continue:**
-- `git checkout main && git merge feat/repository-scout` - Merge feature to main
+- `git checkout main && git merge feat/gh-cli-integration` - Merge feature to main
 - `dojo` - Enter rogue training for next tier
 - `quest log` - See available quests
 
