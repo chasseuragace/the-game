@@ -9,92 +9,48 @@
 
 | Field | Value |
 |-------|-------|
-| **Build** | Rogue (CLI Master) |
-| **Tier** | Pickpocket |
+| **Build** | _None equipped_ |
+| **Tier** | - |
 | **Mindstate** | _Not loaded_ |
-| **Location** | Repository Scout Quest |
+| **Location** | _Not set_ |
 | **Session** | 1 |
 
 ---
 
 ## CONTEXT
 
-**Working on:** Repository Scout - COMPLETE, MERGED TO MAIN  
-**Last action:** feat/gh-cli-integration merged into main, pushed to GitHub  
-**Next action:** Begin Tier 2 (Cutpurse) training or select next quest  
+**Working on:** Nothing yet  
+**Last action:** Game initialized  
+**Next action:** Load a build or import mindstate  
 **Blockers:** None
-
----
-
-## BRANCH STATUS
-
-**Current Branch:** main  
-**Merged Branches:** feat/gh-cli-integration (14 commits)  
-**Remote Status:** ✅ Synced with origin/main  
-**Session 1 Complete:** ✅ All work integrated
 
 ---
 
 ## QUICK STATUS
 
 ```
-Build:     [ rogue ]          Map:      [ repo-scout ]
-Tier:      [ pickpocket ]     Location: [ dojo ]
-Trust:     [ supervised ]     Quest:    [ repository-scout ]
-Voice:     [ rogue ]          Context:  [ 100% ]
+Build:     [ none ]           Map:      [ claude.ai ]
+Tier:      [ - ]              Location: [ - ]
+Trust:     [ - ]              Quest:    [ none ]
+Voice:     [ default ]        Context:  [ 100% ]
 ```
 
 ---
 
 ## RESUME POINT
 
-New game. The framework is loaded. Rogue build equipped. Repository Scout quest complete, refactored, positioned, and mastered.
+New game. The framework is loaded.
 
-**Session 1 Complete:**
-- ✅ Built repo-scout.sh CLI tool
-- ✅ Learned tool architecture and organization
-- ✅ Mastered refactoring and code structure
-- ✅ Understood MCP configuration hierarchy
-- ✅ Discovered file organization principles
-- ✅ Built build loading system with MCP sync
-- ✅ Tested portal access (GitHub MCP)
-- ✅ Accessed AGI repo from the-game repo
-- ✅ Documented rogue progression
+**To start:**
+- `load [wizard|warrior|ranger|paladin|rogue] build` - Equip a class
+- `load mindstate` - Import your worldview
+- `show builds` - See all classes
+- `help` - All commands
 
-**Skills Mastered:**
-- Shadow Walking (filesystem navigation)
-- Sleight of Hand (file manipulation)
-
-**Gear Equipped:**
-- Primary: Daggers of Shell Commands (shell MCP)
-- Artifact: Sigil of GitHub (github MCP)
-- Always: Voice (piper-tts MCP)
-- Also: Git MCP (local repository control)
-
-**Infrastructure Built:**
-- MCP template system (voice always equipped)
-- Build loader with automatic sync
-- Game command interface
-- Tools manifest and organization
-- Configuration hierarchy
-- Portal system (GitHub MCP access)
-
-**Discoveries:**
-- MCPs are portals to other systems
-- Configuration is declarative and composable
-- Tools have cognitive places in the game world
-- Builds are configuration profiles
-- Can access 41 repositories from single location
-
-**Next Tier:** Cutpurse (Tier 2)
-- Available quests: One-Liner, Automation, Shadow Clone
-- Skills to master: Find the Mark, Chain Attacks, Lockpicking
-- Gear to equip: SSH MCP, Docker MCP
-
-**To continue:**
-- `game load rogue` - Reload rogue build
-- `dojo` - Enter rogue training for next tier
-- `quest log` - See available quests
+**The tension:**
+> Marketing says: "Your AI thinking partner"  
+> Reality shows: 49% automation, 7-hour autonomous sessions  
+> The game: No one knows what winning looks like
 
 ---
 

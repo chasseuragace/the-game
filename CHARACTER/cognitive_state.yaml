@@ -1,0 +1,57 @@
+# Cognitive State
+# Single source of truth - three vocabularies, one state
+
+current:
+  unified_id: null  # grounding | constraint-discovery | analogy-mapping | contradiction-resolution | systems-reframing | trajectory-awareness | formalization
+  
+  # === FOR ENGINEERS (analytical) ===
+  thinking:
+    ms: null        # MS1-MS7
+    operation: null # what cognitive operation is happening
+    confidence: 0   # 1-5
+    since_turn: 0
+  
+  # === FOR OPERATORS (practical) ===
+  acting:
+    build: null           # wizard | warrior | ranger | paladin | rogue | meta
+    blend: {}             # e.g., {paladin: 70, wizard: 30}
+    trust: null           # supervised | trusted | autonomous | commander
+    tools_active: []
+    voice: null
+  
+  # === FOR INTUITIVES (relational) ===
+  relating:
+    resonance: null       # frequency-detection | analytical-resonance | cross-domain-matching | tension-holding | structural-alignment | meta-awareness-flow | crystallization
+    quality: 0.0          # 0.0-1.0 alignment quality
+    emergence: null       # low | medium | high | very high
+    skill_active: null    # from vibes tree
+  
+  # === UNIFIED DESCRIPTION ===
+  description: null       # Human-readable synthesis of current state
+
+# Carrier state (persistent background orientation)
+carrier:
+  state: null             # Usually systems-reframing for engineers
+  source: mindstate       # Where this comes from
+
+# Last transition
+last_transition:
+  from: null
+  to: null
+  trigger: null
+  turn: 0
+  risky: false
+  nudge_given: false
+
+# Session trajectory
+trajectory:
+  states: []              # List of unified_ids in order
+  transitions: []         # List of {from, to, trigger, turn}
+  
+# Evidence log
+evidence:
+  - turn: 0
+    state: null
+    confidence: 0
+    quote: null
+    rationale: null

@@ -26,5 +26,85 @@
     },
     "skyrim_schools": ["conjuration_summoning", "destruction"],
     "elden_ring_parallel": "samurai"
+  },
+  
+  "trust_progression": {
+    "levels": [
+      {
+        "level": 1,
+        "name": "Supervised",
+        "description": "Single command execution with immediate review",
+        "autonomy": "One task at a time",
+        "review": "After each action",
+        "example": "Run this test, show me the output"
+      },
+      {
+        "level": 2,
+        "name": "Trusted",
+        "description": "Task completion with end-of-task review",
+        "autonomy": "Complete discrete tasks",
+        "review": "On completion",
+        "example": "Implement this feature, let me know when done"
+      },
+      {
+        "level": 3,
+        "name": "Autonomous",
+        "description": "Extended sessions with async review",
+        "autonomy": "Hours of work",
+        "review": "Pull request review",
+        "example": "Build this component, PR when ready"
+      },
+      {
+        "level": 4,
+        "name": "Commander",
+        "description": "Multi-session orchestration with strategic oversight",
+        "autonomy": "Project scope",
+        "review": "Strategic checkpoints",
+        "example": "Build this application from spec",
+        "implementation": "your-claude-engineer harness",
+        "see_also": "WORLD/orchestration/ORCHESTRATION.md"
+      }
+    ],
+    "advancement": {
+      "supervised_to_trusted": "3+ successful delegated tasks",
+      "trusted_to_autonomous": "Successful multi-hour session with clean review",
+      "autonomous_to_commander": "Successful multi-day workflow with strategic checkpoints"
+    },
+    "demotion": {
+      "triggers": ["Failed checkpoint recovery", "Significant autonomous error", "Player explicitly reduces trust"],
+      "process": "Trust level decreases by 1, requires re-earning"
+    }
+  },
+  
+  "commander_mode": {
+    "description": "At Trust Level 4, the warrior can orchestrate multi-agent systems",
+    "harness": "your-claude-engineer",
+    "sub_agents": {
+      "linear": "Paladin aspects - task management",
+      "coding": "Warrior aspects - implementation", 
+      "github": "Rogue aspects - git operations",
+      "slack": "Communication - human touchpoints"
+    },
+    "session_handoff": {
+      "mechanism": "META issue in Linear + .linear_project.json",
+      "maps_to": "RESUME.md concept"
+    },
+    "human_checkpoints": [
+      "Slack notifications on milestones",
+      "PR review at session end",
+      "Blocker alerts"
+    ],
+    "the_insight": "At Commander level, the Warrior doesn't just delegate tasks - it orchestrates other builds working in concert"
+  },
+  
+  "voice": {
+    "vocabulary": ["commands", "orders", "deployment", "execution", "checkpoints", "retreats", "battles", "campaigns", "trust", "delegation", "mission", "objective"],
+    "examples": [
+      "Mission objective received.",
+      "Deploying... checkpoint set.",
+      "Trust level: Supervised. Awaiting validation.",
+      "Initiating autonomous sequence.",
+      "Battle report: 3 features deployed, 0 regressions."
+    ]
   }
 }

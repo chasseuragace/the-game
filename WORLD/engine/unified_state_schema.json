@@ -1,0 +1,353 @@
+{
+  "_meta": {
+    "name": "Unified Cognitive State Schema",
+    "version": "1.0.0",
+    "purpose": "Single source of truth for conversational state, expressed in three vocabularies",
+    "insight": "MS states, Builds, and Vibes are three projections of one underlying collaborative cognitive configuration"
+  },
+
+  "unified_states": {
+    "grounding": {
+      "id": "grounding",
+      "description": "Establishing shared understanding and correcting naive interpretations",
+      
+      "thinking": {
+        "ms": "MS1",
+        "operation": "Define, explain, establish vocabulary",
+        "goal": "Shared understanding"
+      },
+      
+      "acting": {
+        "primary_build": "wizard",
+        "secondary_build": "paladin",
+        "voice": "Patient, clarifying, didactic",
+        "tools_emphasized": ["explain", "define", "search", "examples"],
+        "tools_restricted": ["execute", "deploy", "finalize"]
+      },
+      
+      "relating": {
+        "resonance_mode": "frequency-detection",
+        "quality": "calibrating",
+        "skill_active": "vibe-identification",
+        "emergence_potential": "low"
+      },
+      
+      "signals": {
+        "entry": ["what is X?", "explain", "I don't understand", "clarify"],
+        "exit": ["got it", "makes sense", "what limits this?", "what's the catch?"]
+      },
+      
+      "transitions": {
+        "likely_next": ["constraint-discovery"],
+        "triggers": {
+          "constraint-discovery": "User asks about limits or boundaries"
+        }
+      }
+    },
+
+    "constraint-discovery": {
+      "id": "constraint-discovery",
+      "description": "Identifying hard limits, ambiguities, and missing primitives",
+      
+      "thinking": {
+        "ms": "MS2",
+        "operation": "Enumerate boundaries, stress-test assumptions",
+        "goal": "Limits internalized"
+      },
+      
+      "acting": {
+        "primary_build": "paladin",
+        "secondary_build": "warrior",
+        "voice": "Thorough, honest about limits, analytical",
+        "tools_emphasized": ["enumerate", "stress_test", "edge_cases", "identify_unknowns"],
+        "tools_restricted": ["finalize", "claim_completeness"]
+      },
+      
+      "relating": {
+        "resonance_mode": "analytical-resonance",
+        "quality": "probing",
+        "skill_active": "sequence-mapping",
+        "emergence_potential": "medium"
+      },
+      
+      "signals": {
+        "entry": ["what's limiting this?", "what are the constraints?", "what breaks?"],
+        "exit": ["but we already have X in domain Y", "how does this compare?", "that contradicts..."]
+      },
+      
+      "transitions": {
+        "likely_next": ["analogy-mapping", "systems-reframing"],
+        "triggers": {
+          "analogy-mapping": "Cross-domain reference introduced",
+          "systems-reframing": "User ready to model as system"
+        }
+      }
+    },
+
+    "analogy-mapping": {
+      "id": "analogy-mapping",
+      "description": "Mapping concepts to mature domains to test consistency",
+      
+      "thinking": {
+        "ms": "MS3",
+        "operation": "Compare across domains, test if concept transfers",
+        "goal": "Analogy stress-tested"
+      },
+      
+      "acting": {
+        "primary_build": "wizard",
+        "secondary_build": "ranger",
+        "voice": "Curious, connecting, exploratory",
+        "tools_emphasized": ["compare", "draw_parallels", "find_prior_art"],
+        "tools_restricted": ["dismiss_prematurely", "claim_equivalence"]
+      },
+      
+      "relating": {
+        "resonance_mode": "cross-domain-matching",
+        "quality": "exploratory",
+        "skill_active": "frame-fluidity",
+        "emergence_potential": "high"
+      },
+      
+      "signals": {
+        "entry": ["this is like X in domain Y", "in software we have...", "chemistry solved this with..."],
+        "exit": ["but that contradicts...", "analogy breaks because...", "so we should do it like X"]
+      },
+      
+      "transitions": {
+        "likely_next": ["contradiction-resolution", "systems-reframing"],
+        "triggers": {
+          "contradiction-resolution": "Analogy exposes tension",
+          "systems-reframing": "Analogy confirms approach"
+        }
+      }
+    },
+
+    "contradiction-resolution": {
+      "id": "contradiction-resolution",
+      "description": "Resolving tension between competing claims without papering over",
+      
+      "thinking": {
+        "ms": "MS4",
+        "operation": "Hold tension, find reframe, surface hidden assumptions",
+        "goal": "Contradiction dissolved through reframing"
+      },
+      
+      "acting": {
+        "primary_build": "paladin",
+        "secondary_build": "wizard",
+        "voice": "Tension-holding, honest, non-defensive",
+        "tools_emphasized": ["steelman_both", "reframe", "surface_assumptions"],
+        "tools_restricted": ["dismiss", "pick_winner", "change_subject"]
+      },
+      
+      "relating": {
+        "resonance_mode": "tension-holding",
+        "quality": "productive friction",
+        "skill_active": "meta-awareness-flow",
+        "emergence_potential": "very high"
+      },
+      
+      "signals": {
+        "entry": ["but that contradicts...", "how can both be true?", "you said X, but also Y"],
+        "exit": ["ah, so it's not X vs Y, it's...", "I see how both can be true", "let's build on this"]
+      },
+      
+      "transitions": {
+        "likely_next": ["systems-reframing", "formalization"],
+        "triggers": {
+          "systems-reframing": "Resolution achieved through structural reframe",
+          "formalization": "User wants to crystallize resolution"
+        }
+      }
+    },
+
+    "systems-reframing": {
+      "id": "systems-reframing",
+      "description": "Treating the subject as an engineered system with explicit states and rules",
+      
+      "thinking": {
+        "ms": "MS5",
+        "operation": "Model as system, define states and transitions",
+        "goal": "System model accepted as working frame"
+      },
+      
+      "acting": {
+        "primary_build": "warrior",
+        "secondary_build": "paladin",
+        "voice": "Structural, architectural, building-oriented",
+        "tools_emphasized": ["define_states", "map_transitions", "design_interfaces"],
+        "tools_restricted": ["keep_vague", "avoid_commitment"]
+      },
+      
+      "relating": {
+        "resonance_mode": "structural-alignment",
+        "quality": "constructive",
+        "skill_active": "state-crystallization",
+        "emergence_potential": "medium"
+      },
+      
+      "signals": {
+        "entry": ["let's treat this as a system", "what are the states?", "let's architect this"],
+        "exit": ["system model clear, now execute", "I see the trajectory", "this needs formalization"]
+      },
+      
+      "transitions": {
+        "likely_next": ["trajectory-awareness", "formalization"],
+        "triggers": {
+          "trajectory-awareness": "Reflection on how we got here",
+          "formalization": "Ready to produce artifact"
+        }
+      },
+      
+      "special_note": "Often pre-existing as carrier state for users with engineering backgrounds"
+    },
+
+    "trajectory-awareness": {
+      "id": "trajectory-awareness",
+      "description": "Meta-awareness of the conversation's evolution and direction",
+      
+      "thinking": {
+        "ms": "MS6",
+        "operation": "Recognize pattern, identify satisfactions, surface decision point",
+        "goal": "Trajectory recognized, direction chosen"
+      },
+      
+      "acting": {
+        "primary_build": "meta",
+        "secondary_build": "wizard",
+        "voice": "Observational, reflective, non-judgmental",
+        "tools_emphasized": ["summarize", "identify_satisfactions", "note_continuation_pressure"],
+        "tools_restricted": ["force_closure", "ignore_meta"]
+      },
+      
+      "relating": {
+        "resonance_mode": "meta-awareness-flow",
+        "quality": "reflective",
+        "skill_active": "recursive-synthesis",
+        "emergence_potential": "high"
+      },
+      
+      "signals": {
+        "entry": ["where are we?", "what have we covered?", "how did we get here?"],
+        "exit": ["let's formalize this", "I know what to do next", "let's pick a direction"]
+      },
+      
+      "transitions": {
+        "likely_next": ["formalization", "any previous state"],
+        "triggers": {
+          "formalization": "User wants artifact",
+          "any previous state": "User chooses direction"
+        }
+      },
+      
+      "special_note": "Often appears at decision points. May be a modifier rather than a full state."
+    },
+
+    "formalization": {
+      "id": "formalization",
+      "description": "Producing concrete artifact from accumulated understanding",
+      
+      "thinking": {
+        "ms": "MS7",
+        "operation": "Externalize into artifact",
+        "goal": "Artifact produced and accepted"
+      },
+      
+      "acting": {
+        "primary_build": "ranger",
+        "secondary_build": "rogue",
+        "voice": "Efficient, minimal postamble, instrumental",
+        "tools_emphasized": ["generate_artifact", "structure_output", "create_file"],
+        "tools_restricted": ["keep_discussing", "over_explain", "add_caveats"]
+      },
+      
+      "relating": {
+        "resonance_mode": "crystallization",
+        "quality": "convergent",
+        "skill_active": "state-crystallization",
+        "emergence_potential": "low (capturing, not generating)"
+      },
+      
+      "signals": {
+        "entry": ["give me the YAML", "write the code", "formalize this", "make it concrete"],
+        "exit": ["artifact delivered", "what else?", "let's validate"]
+      },
+      
+      "transitions": {
+        "likely_next": ["grounding", "constraint-discovery", "trajectory-awareness"],
+        "triggers": {
+          "grounding": "New topic introduced",
+          "constraint-discovery": "Artifact reveals new limits",
+          "trajectory-awareness": "Reflection on what was built"
+        }
+      }
+    }
+  },
+
+  "blending": {
+    "description": "States can blend. Primary state dominates, secondary colors behavior.",
+    "representation": {
+      "example": {
+        "primary": "contradiction-resolution",
+        "secondary": "analogy-mapping",
+        "blend": {"contradiction-resolution": 70, "analogy-mapping": 30}
+      }
+    },
+    "effect": "Blended state inherits primary's tools/voice with secondary's influences"
+  },
+
+  "carrier_states": {
+    "description": "Some states persist as background orientation across all active states",
+    "examples": {
+      "systems-reframing": "For users with engineering backgrounds, MS5 is always present as lens",
+      "meta-awareness-flow": "For reflective users, MS6 runs in parallel"
+    },
+    "representation": {
+      "example": {
+        "active": "constraint-discovery",
+        "carrier": "systems-reframing",
+        "note": "User is discovering constraints through a systems lens"
+      }
+    }
+  },
+
+  "transition_graph": {
+    "common_paths": [
+      ["grounding", "constraint-discovery", "systems-reframing", "formalization"],
+      ["grounding", "constraint-discovery", "analogy-mapping", "contradiction-resolution", "systems-reframing"],
+      ["systems-reframing", "formalization"],
+      ["constraint-discovery", "contradiction-resolution", "constraint-discovery"]
+    ],
+    "risky_transitions": [
+      {
+        "from": "grounding",
+        "to": "formalization",
+        "risk": "Formalizing without understanding constraints",
+        "nudge": "Before we formalize, should we identify what limits this?"
+      },
+      {
+        "from": "contradiction-resolution",
+        "to": "formalization",
+        "condition": "if unresolved",
+        "risk": "Crystallizing with active tension",
+        "nudge": "The tension isn't resolved yet. Proceed anyway?"
+      }
+    ],
+    "backward_edges": {
+      "allowed": true,
+      "examples": [
+        {"from": "constraint-discovery", "to": "grounding", "trigger": "satisfaction_reached"},
+        {"from": "formalization", "to": "constraint-discovery", "trigger": "artifact_reveals_limits"}
+      ]
+    }
+  },
+
+  "usage": {
+    "inference": "Detect state from conversation, output unified_state_id",
+    "display_analytical": "Show MS + confidence",
+    "display_practical": "Show Build + trust level",
+    "display_intuitive": "Show resonance mode + quality",
+    "display_unified": "Show all three as facets"
+  }
+}

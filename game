@@ -1,137 +1,84 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# Game Command Launcher
+# Usage: ./game [command] [args]
 
-# The Game - Main command interface
-# Provides game commands like: game load rogue, game status, game dojo, etc.
+set -e
 
-set -euo pipefail
+GAME_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-readonly GAME_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-readonly SCRIPTS_DIR="$GAME_ROOT/WORLD/scripts"
+case "$1" in
+    "engineer")
+        # Run the game-configured engineer
+        shift
+        cd "$GAME_ROOT/WORLD/engine"
+        python3 game_agent.py "$@"
+        ;;
+    
+    "test")
+        # Test the integration
+        cd "$GAME_ROOT"
+        python3 WORLD/engine/test_game_state.py
+        ;;
+    
+    "status")
+        # Show current game state
+        echo "=== GAME STATUS ==="
+        echo ""
+        if [ -f "$GAME_ROOT/RESUME.md" ]; then
+            grep -E "^\*\*Build\*\*|^\*\*Tier\*\*|^\*\*Session\*\*|^\*\*Quest\*\*" "$GAME_ROOT/RESUME.md" | head -5
+        else
+            echo "No RESUME.md found"
+        fi
+        ;;
+    
+    "builds")
+        # List available builds
+        echo "=== AVAILABLE BUILDS ==="
+        echo ""
+        for build in warrior wizard ranger paladin rogue; do
+            if [ -f "$GAME_ROOT/WORLD/builds/$build/build.json" ]; then
+                name=$(grep '"name"' "$GAME_ROOT/WORLD/builds/$build/build.json" | head -1 | cut -d'"' -f4)
+                tagline=$(grep '"tagline"' "$GAME_ROOT/WORLD/builds/$build/build.json" | head -1 | cut -d'"' -f4)
+                echo "  $build - $name"
+                echo "    $tagline"
+                echo ""
+            fi
+        done
+        ;;
+    
+    "help"|"")
+        cat << 'EOF'
+Game Command Launcher
+=====================
 
-# Colors
-readonly RED='\033[0;31m'
-readonly GREEN='\033[0;32m'
-readonly BLUE='\033[0;34m'
-readonly YELLOW='\033[1;33m'
-readonly NC='\033[0m'
+Usage: ./game [command] [args]
 
-# ============================================================================
-# COMMANDS
-# ============================================================================
+Commands:
+  engineer <project_dir>     Run game-configured engineer
+  test                       Test the integration
+  status                     Show current game state
+  builds                     List available builds
+  help                       Show this help
 
-cmd_load() {
-  local build="${1:-}"
-  [ -z "$build" ] && die "Usage: game load [build-name]"
-  
-  "$SCRIPTS_DIR/load-build.sh" "$build"
-}
+Examples:
+  ./game engineer /tmp/my-project
+  ./game engineer /tmp/my-project --max-iterations 5
+  ./game test
+  ./game status
+  ./game builds
 
-cmd_status() {
-  echo -e "${BLUE}📊 Game Status:${NC}"
-  echo ""
-  
-  if [ -f "$GAME_ROOT/CHARACTER/build.md" ]; then
-    echo -e "${GREEN}Active Build:${NC}"
-    head -5 "$GAME_ROOT/CHARACTER/build.md" | tail -3
-    echo ""
-  fi
-  
-  if [ -f "$GAME_ROOT/RESUME.md" ]; then
-    echo -e "${GREEN}Current Session:${NC}"
-    grep "Working on:" "$GAME_ROOT/RESUME.md" | head -1
-    echo ""
-  fi
-}
-
-cmd_quest() {
-  if [ -f "$GAME_ROOT/QUESTLOG/active.md" ]; then
-    cat "$GAME_ROOT/QUESTLOG/active.md"
-  else
-    echo "No active quest"
-  fi
-}
-
-cmd_inventory() {
-  if [ -f "$GAME_ROOT/INVENTORY/equipped.json" ]; then
-    echo -e "${BLUE}📦 Equipped Gear:${NC}"
-    jq '.gear' "$GAME_ROOT/INVENTORY/equipped.json"
-  fi
-}
-
-cmd_help() {
-  cat << 'EOF'
-The Game - AI Game Saves Framework
-
-COMMANDS:
-  game load [build]       Load a build (wizard, warrior, ranger, paladin, rogue)
-  game status             Show current game status
-  game quest              Show active quest
-  game inventory          Show equipped gear
-  game dojo               Enter training dojo
-  game help               Show this help
-
-EXAMPLES:
-  game load rogue         # Load rogue build and sync MCP
-  game status             # Check current state
-  game quest              # See active quest
+Before running engineer:
+  1. Load a build: Tell Claude "load warrior build"
+  2. Install dependencies: cd WORLD/engine/your-claude-engineer && pip install -r requirements.txt
+  3. Configure .env: Copy .env.example and fill in your API keys
+  4. Run: ./game engineer /path/to/project
 
 EOF
-}
-
-cmd_dojo() {
-  local build_file="$GAME_ROOT/CHARACTER/build.md"
-  
-  if [ ! -f "$build_file" ]; then
-    echo -e "${RED}✗ No build loaded. Use 'game load [build]' first.${NC}"
-    return 1
-  fi
-  
-  echo -e "${BLUE}🥋 Entering the Dojo...${NC}"
-  echo ""
-  cat "$build_file"
-}
-
-# ============================================================================
-# UTILITIES
-# ============================================================================
-
-die() {
-  echo -e "${RED}✗ $*${NC}" >&2
-  exit 1
-}
-
-# ============================================================================
-# MAIN
-# ============================================================================
-
-main() {
-  local cmd="${1:-help}"
-  
-  case "$cmd" in
-    load)
-      cmd_load "${2:-}"
-      ;;
-    status)
-      cmd_status
-      ;;
-    quest)
-      cmd_quest
-      ;;
-    inventory)
-      cmd_inventory
-      ;;
-    dojo)
-      cmd_dojo
-      ;;
-    help|--help|-h)
-      cmd_help
-      ;;
+        ;;
+    
     *)
-      echo -e "${RED}Unknown command: $cmd${NC}"
-      cmd_help
-      exit 1
-      ;;
-  esac
-}
-
-main "$@"
+        echo "Unknown command: $1"
+        echo "Run './game help' for usage"
+        exit 1
+        ;;
+esac

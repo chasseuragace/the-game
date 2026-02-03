@@ -142,12 +142,37 @@ When a build is loaded:
 
 ## TRUST PROGRESSION (Warrior)
 
-| Level | Name | Autonomy | Review |
-|-------|------|----------|--------|
-| 1 | Supervised | Single command | Immediate |
-| 2 | Trusted | Task completion | On complete |
-| 3 | Autonomous | Hours | Async PR |
-| 4 | Commander | Project scope | Strategic |
+| Level | Name | Autonomy | Review | Implementation |
+|-------|------|----------|--------|----------------|
+| 1 | Supervised | Single command | Immediate | Manual |
+| 2 | Trusted | Task completion | On complete | Manual |
+| 3 | Autonomous | Hours | Async PR | Claude Code |
+| 4 | Commander | Project scope | Strategic | Orchestration harness |
+
+At **Commander** level, the Warrior orchestrates multiple sub-agents. See `WORLD/orchestration/`.
+
+---
+
+## MULTI-AGENT ORCHESTRATION
+
+At Warrior Trust Level 4 (Commander), the framework supports multi-agent orchestration via the `your-claude-engineer` harness.
+
+```
+Orchestrator
+    ├── Linear Agent (Paladin - tasks)
+    ├── Coding Agent (Warrior - implementation)
+    ├── GitHub Agent (Rogue - git)
+    └── Slack Agent (communication)
+```
+
+**Usage:** 
+- Write app_spec.txt (PRD)
+- Run harness: `python autonomous_agent_demo.py --project-dir my-app`
+- Monitor via Slack, review via PR
+
+**Key insight:** At Commander level, builds work in concert. The orchestrator coordinates Paladin (planning), Warrior (execution), and Rogue (git ops) aspects simultaneously.
+
+See: `WORLD/orchestration/ORCHESTRATION.md`
 
 ---
 

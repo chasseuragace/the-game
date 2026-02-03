@@ -321,27 +321,36 @@ Autonomous → Commander:  Successful multi-day workflow with strategic checkpoi
 - Agent proposes quest when player seems stuck
 - Agent notes build trajectory if blending occurs
 
-### 6.3 Agent ↔ Agent (Future)
+### 6.3 Agent ↔ Agent (Implemented)
 
-**Not yet implemented.** When implemented:
+**Now implemented via `your-claude-engineer` harness.**
+
+See: `WORLD/orchestration/ORCHESTRATION.md`
 
 ```
-Orchestrator Agent
+Orchestrator Agent (Game Engine)
       │
-      ├── Planning Agent (Paladin mode)
+      ├── Linear Agent (Paladin - task management)
       │
-      ├── Execution Agent (Warrior mode)
+      ├── Coding Agent (Warrior - implementation)
       │
-      ├── Critic Agent (validation)
+      ├── GitHub Agent (Rogue - git operations)
       │
-      └── Memory Agent (state management)
+      └── Slack Agent (communication)
 ```
 
-**Protocol principles (for future):**
-- Explicit handoff with state transfer
-- No hidden communication
-- Human visibility into all exchanges
-- Checkpoint before agent-to-agent transfer
+**Protocol principles (implemented):**
+- Explicit handoff with state transfer (META issue + .linear_project.json)
+- No hidden communication (orchestrator passes ALL context)
+- Human visibility into all exchanges (Slack notifications)
+- Checkpoint before agent-to-agent transfer (verification gate)
+
+**Critical rule:** Agents don't share memory. Orchestrator must pass complete context explicitly.
+
+**Anti-pattern:** "Ask coding agent to check Linear for the next issue"
+**Correct:** Get from Linear agent → Pass full context to Coding agent
+
+This maps to Warrior build at Trust Level 4: Commander.
 
 ---
 

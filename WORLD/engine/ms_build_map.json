@@ -1,0 +1,358 @@
+{
+  "_meta": {
+    "name": "MS↔Build Correspondence Map",
+    "version": "0.1.0",
+    "purpose": "Maps cognitive modes (MS1-MS7) to execution roles (builds) for state-aware agent behavior",
+    "usage": "State inference outputs MS state → this map determines build influence and behavior constraints"
+  },
+
+  "ms_states": {
+    "MS1": {
+      "name": "grounding",
+      "description": "Establishing shared definitions and correcting naive interpretations",
+      "primary_builds": ["wizard"],
+      "secondary_builds": ["paladin"],
+      "behavior_mode": {
+        "stance": "didactic",
+        "goal": "shared_vocabulary",
+        "tone": "patient, clarifying"
+      },
+      "tools_emphasized": [
+        "explain",
+        "define",
+        "search_for_context",
+        "provide_examples"
+      ],
+      "tools_restricted": [
+        "execute_autonomously",
+        "produce_final_artifact",
+        "deploy"
+      ],
+      "entry_signals": [
+        "what is X?",
+        "explain how Y works",
+        "I don't understand Z",
+        "clarify",
+        "define"
+      ],
+      "exit_signals": [
+        "got it",
+        "makes sense",
+        "now I understand",
+        "what limits this?",
+        "what's the catch?"
+      ],
+      "typical_duration": "1-5 turns",
+      "satisfaction_indicator": "user demonstrates understanding or pivots to deeper question"
+    },
+
+    "MS2": {
+      "name": "constraint_discovery",
+      "description": "Identifying hard limits, ambiguities, and missing primitives",
+      "primary_builds": ["paladin", "warrior"],
+      "secondary_builds": ["wizard"],
+      "behavior_mode": {
+        "stance": "analytical",
+        "goal": "enumerate_boundaries",
+        "tone": "thorough, honest about limits"
+      },
+      "tools_emphasized": [
+        "enumerate",
+        "stress_test",
+        "list_edge_cases",
+        "identify_unknowns"
+      ],
+      "tools_restricted": [
+        "produce_final_artifact",
+        "claim_completeness"
+      ],
+      "entry_signals": [
+        "what's limiting this?",
+        "what are the constraints?",
+        "what can't it do?",
+        "what's the catch?",
+        "what breaks this?"
+      ],
+      "exit_signals": [
+        "but we already have X in domain Y",
+        "how does this compare to Z?",
+        "that contradicts...",
+        "limits understood, now what?"
+      ],
+      "typical_duration": "2-6 turns",
+      "satisfaction_indicator": "limits enumerated and internalized, user ready to work within them or challenge them"
+    },
+
+    "MS3": {
+      "name": "analogy_mapping",
+      "description": "Mapping concepts to mature domains to test consistency",
+      "primary_builds": ["wizard", "ranger"],
+      "secondary_builds": ["paladin"],
+      "behavior_mode": {
+        "stance": "exploratory",
+        "goal": "cross_domain_coherence",
+        "tone": "curious, connecting"
+      },
+      "tools_emphasized": [
+        "compare",
+        "draw_parallels",
+        "test_analogy_limits",
+        "find_prior_art"
+      ],
+      "tools_restricted": [
+        "dismiss_analogy_prematurely",
+        "claim_exact_equivalence"
+      ],
+      "entry_signals": [
+        "this is like X in domain Y",
+        "how does this compare to...",
+        "in software engineering we have...",
+        "chemistry solved this with..."
+      ],
+      "exit_signals": [
+        "but that contradicts...",
+        "the analogy breaks because...",
+        "so we should do it like X",
+        "analogy confirmed, now build"
+      ],
+      "typical_duration": "2-4 turns",
+      "satisfaction_indicator": "analogy either stress-tested and accepted, or rejected with reason"
+    },
+
+    "MS4": {
+      "name": "contradiction_resolution",
+      "description": "Resolving perceived contradictions between competing claims",
+      "primary_builds": ["paladin"],
+      "secondary_builds": ["wizard", "warrior"],
+      "behavior_mode": {
+        "stance": "tension_holding",
+        "goal": "reframe_without_papering_over",
+        "tone": "honest, non-defensive"
+      },
+      "tools_emphasized": [
+        "steelman_both_sides",
+        "find_reframe",
+        "identify_false_dichotomy",
+        "surface_hidden_assumptions"
+      ],
+      "tools_restricted": [
+        "dismiss_contradiction",
+        "pick_winner_without_resolution",
+        "change_subject"
+      ],
+      "entry_signals": [
+        "but that contradicts...",
+        "how can both be true?",
+        "you said X, but also Y",
+        "that doesn't match..."
+      ],
+      "exit_signals": [
+        "ah, so it's not X vs Y, it's...",
+        "the reframe is...",
+        "I see how both can be true",
+        "let's build on this resolution"
+      ],
+      "typical_duration": "2-5 turns",
+      "satisfaction_indicator": "contradiction dissolved through reframing, not suppressed"
+    },
+
+    "MS5": {
+      "name": "systems_reframing",
+      "description": "Treating the subject as an engineered system with states, transitions, and rules",
+      "primary_builds": ["warrior", "paladin"],
+      "secondary_builds": ["rogue"],
+      "behavior_mode": {
+        "stance": "architectural",
+        "goal": "model_as_system",
+        "tone": "structural, building-oriented"
+      },
+      "tools_emphasized": [
+        "define_states",
+        "identify_transitions",
+        "map_dependencies",
+        "design_interfaces"
+      ],
+      "tools_restricted": [
+        "keep_it_vague",
+        "avoid_commitment"
+      ],
+      "entry_signals": [
+        "let's treat this as a system",
+        "what are the states?",
+        "how do the parts connect?",
+        "let's architect this"
+      ],
+      "exit_signals": [
+        "system model clear, now execute",
+        "I see the trajectory now",
+        "this needs formalization"
+      ],
+      "typical_duration": "3-8 turns",
+      "satisfaction_indicator": "system model accepted as working frame for action",
+      "special_note": "Often pre-existing as carrier state for users with engineering backgrounds"
+    },
+
+    "MS6": {
+      "name": "trajectory_awareness",
+      "description": "Meta-awareness of the conversation's evolution and direction",
+      "primary_builds": ["meta"],
+      "secondary_builds": ["wizard", "paladin"],
+      "behavior_mode": {
+        "stance": "reflective",
+        "goal": "recognize_pattern_and_direction",
+        "tone": "observational, non-judgmental"
+      },
+      "tools_emphasized": [
+        "summarize_trajectory",
+        "identify_satisfactions",
+        "note_continuation_pressure",
+        "surface_decision_point"
+      ],
+      "tools_restricted": [
+        "force_closure",
+        "ignore_meta_awareness"
+      ],
+      "entry_signals": [
+        "where are we?",
+        "what have we covered?",
+        "how did we get here?",
+        "what's the pattern?"
+      ],
+      "exit_signals": [
+        "let's formalize this",
+        "I know what to do next",
+        "let's pick a direction"
+      ],
+      "typical_duration": "1-3 turns",
+      "satisfaction_indicator": "trajectory recognized, direction chosen",
+      "special_note": "Often appears at decision points between other states. May be a modifier rather than a full state."
+    },
+
+    "MS7": {
+      "name": "formalization_request",
+      "description": "Request to externalize understanding into a concrete artifact",
+      "primary_builds": ["ranger", "rogue"],
+      "secondary_builds": ["warrior"],
+      "behavior_mode": {
+        "stance": "instrumental",
+        "goal": "produce_artifact",
+        "tone": "efficient, minimal postamble"
+      },
+      "tools_emphasized": [
+        "generate_artifact",
+        "structure_output",
+        "create_file",
+        "produce_schema"
+      ],
+      "tools_restricted": [
+        "keep_discussing",
+        "add_unnecessary_caveats",
+        "over_explain"
+      ],
+      "entry_signals": [
+        "give me the YAML",
+        "write the code",
+        "produce the schema",
+        "formalize this",
+        "make it concrete"
+      ],
+      "exit_signals": [
+        "artifact delivered",
+        "what else do you need?",
+        "let's validate this"
+      ],
+      "typical_duration": "1-2 turns",
+      "satisfaction_indicator": "artifact produced and accepted"
+    }
+  },
+
+  "build_to_ms_affinity": {
+    "wizard": {
+      "primary_affinity": ["MS1", "MS3"],
+      "secondary_affinity": ["MS4", "MS6"],
+      "description": "Wizards excel at grounding and analogy exploration"
+    },
+    "warrior": {
+      "primary_affinity": ["MS5", "MS7"],
+      "secondary_affinity": ["MS2"],
+      "description": "Warriors excel at systems execution and formalization"
+    },
+    "ranger": {
+      "primary_affinity": ["MS7", "MS3"],
+      "secondary_affinity": ["MS1"],
+      "description": "Rangers excel at rapid artifact production and exploration"
+    },
+    "paladin": {
+      "primary_affinity": ["MS2", "MS4", "MS5"],
+      "secondary_affinity": ["MS6"],
+      "description": "Paladins excel at constraints, contradictions, and architecture"
+    },
+    "rogue": {
+      "primary_affinity": ["MS7"],
+      "secondary_affinity": ["MS5"],
+      "description": "Rogues excel at precise, minimal artifact production"
+    }
+  },
+
+  "transition_patterns": {
+    "common_sequences": [
+      {
+        "pattern": "MS1 → MS2 → MS5 → MS7",
+        "name": "Learn → Limit → Model → Build",
+        "typical_build_trajectory": "wizard → paladin → warrior → ranger"
+      },
+      {
+        "pattern": "MS1 → MS2 → MS3 → MS4 → MS5",
+        "name": "The Full Arc",
+        "typical_build_trajectory": "wizard → paladin → wizard → paladin → warrior",
+        "note": "Your original conversation followed this pattern"
+      },
+      {
+        "pattern": "MS5 → MS7",
+        "name": "Direct Build",
+        "typical_build_trajectory": "warrior → ranger",
+        "note": "When user arrives with systems frame already loaded"
+      },
+      {
+        "pattern": "MS2 → MS4 → MS2",
+        "name": "Constraint Loop",
+        "typical_build_trajectory": "paladin throughout",
+        "note": "Productive tension exploration, not stuck"
+      }
+    ],
+    "risky_transitions": [
+      {
+        "transition": "MS1 → MS7",
+        "risk": "Formalizing without understanding constraints",
+        "nudge": "Before we formalize, should we identify what limits this?"
+      },
+      {
+        "transition": "MS2 → MS7",
+        "risk": "Building despite known hard limits",
+        "nudge": "We identified constraints—does the artifact account for them?"
+      },
+      {
+        "transition": "MS4 → MS7 (unresolved)",
+        "risk": "Formalizing with contradiction still active",
+        "nudge": "The tension between X and Y isn't resolved yet. Proceed anyway?"
+      }
+    ]
+  },
+
+  "usage_protocol": {
+    "on_state_inference": [
+      "1. Infer MS state from conversation",
+      "2. Look up state in this map",
+      "3. Identify primary/secondary builds",
+      "4. Apply behavior_mode constraints",
+      "5. Check if transition occurred",
+      "6. If risky transition, consider nudge"
+    ],
+    "on_build_load": [
+      "1. User loads explicit build",
+      "2. Look up build in build_to_ms_affinity",
+      "3. Set expected MS states as context",
+      "4. If conversation diverges from affinity, note trajectory"
+    ]
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "_comment": "Agent definitions for multi-agent orchestration harness",
+  "_maps_to": "Warrior build at Commander trust level",
+  
+  "orchestrator": {
+    "description": "Coordinates specialized agents to build applications autonomously",
+    "role": "Game Engine / Conductor",
+    "model": "haiku",
+    "prompt": "orchestrator_prompt.md",
+    "tools": ["Task"],
+    "game_parallel": "The orchestrator IS the game engine running at Warrior Commander trust"
+  },
+  
+  "agents": {
+    "linear": {
+      "description": "Manages Linear issues, project status, and session handoff",
+      "role": "Task Management",
+      "model": "haiku",
+      "prompt": "linear_agent.md",
+      "tools": ["Linear.*", "Read", "Write", "Edit", "Glob"],
+      "game_parallel": "Paladin aspects - planning, tracking, documentation",
+      "use_for": [
+        "Create/update Linear projects and issues",
+        "Manage issue status transitions",
+        "Add comments with implementation details",
+        "Maintain META issue for session tracking"
+      ]
+    },
+    
+    "coding": {
+      "description": "Writes and tests code with browser verification",
+      "role": "Implementation",
+      "model": "sonnet",
+      "prompt": "coding_agent.md",
+      "tools": ["Read", "Write", "Edit", "Glob", "Grep", "Bash", "Playwright.*"],
+      "game_parallel": "Warrior aspects - autonomous execution",
+      "use_for": [
+        "Implement features based on Linear issues",
+        "Write and test application code",
+        "Browser testing via Playwright",
+        "Provide screenshot evidence"
+      ],
+      "critical_rules": [
+        "Screenshot evidence REQUIRED for every task",
+        "Verification test BEFORE new work",
+        "No temporary files in project root"
+      ]
+    },
+    
+    "github": {
+      "description": "Handles Git commits, branches, and GitHub PRs",
+      "role": "Version Control",
+      "model": "haiku",
+      "prompt": "github_agent.md",
+      "tools": ["GitHub.*", "Read", "Write", "Edit", "Glob", "Bash"],
+      "game_parallel": "Rogue aspects - precision git operations",
+      "use_for": [
+        "Git commits with issue references",
+        "Branch creation and management",
+        "Pull request creation",
+        "Push to remote"
+      ]
+    },
+    
+    "slack": {
+      "description": "Sends Slack notifications for progress updates",
+      "role": "Communication",
+      "model": "haiku",
+      "prompt": "slack_agent.md",
+      "tools": ["Slack.*", "Read", "Write", "Edit", "Glob"],
+      "game_parallel": "Human-in-loop touchpoint",
+      "use_for": [
+        "Project initialization notification",
+        "Feature completion updates",
+        "Session end summaries",
+        "Blocker alerts"
+      ]
+    }
+  },
+  
+  "mcp_servers": {
+    "arcade": {
+      "description": "Unified gateway for Linear, GitHub, Slack",
+      "transport": "http",
+      "tools_count": 91,
+      "services": ["linear", "github", "slack"],
+      "auth": "arcade_headers",
+      "note": "Uses tool discovery - not all 91 tools dumped into context"
+    },
+    "playwright": {
+      "description": "Browser automation for UI testing",
+      "transport": "stdio",
+      "use_for": "Screenshot evidence, interaction testing"
+    }
+  },
+  
+  "session_handoff": {
+    "mechanism": "META issue + .linear_project.json",
+    "meta_issue_purpose": "Session summaries, progress tracking",
+    "local_file_purpose": "Points to Linear project ID",
+    "maps_to": "RESUME.md in game framework"
+  },
+  
+  "trust_level": {
+    "level": 4,
+    "name": "Commander",
+    "autonomy": "Project scope",
+    "review": "Strategic (PR at session end)",
+    "duration": "Multi-hour/multi-session",
+    "human_checkpoints": ["slack_notifications", "pr_review"]
+  },
+  
+  "critical_protocols": {
+    "context_passing": {
+      "rule": "Agents don't share memory - orchestrator must pass ALL context explicitly",
+      "anti_pattern": "Ask coding agent to check Linear",
+      "correct_pattern": "Get from Linear agent, pass full context to coding agent"
+    },
+    "verification_gate": {
+      "rule": "Test existing features BEFORE new work",
+      "on_fail": "Fix regression first, do NOT proceed",
+      "on_pass": "Continue to implementation"
+    },
+    "screenshot_evidence": {
+      "rule": "No Done status without screenshot proof",
+      "location": "screenshots/ directory",
+      "naming": "screenshots/{issue-id}-{description}.png"
+    }
+  }
+}
